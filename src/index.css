@@ -1,0 +1,62 @@
+* {
+  user-select: none;
+}
+
+.header {
+  width: 100%;
+  height: 194px;
+  left: 0px;
+  top: 0px;
+  background: #524d90;
+
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  align-items: center;
+  color: #fcfcfc;
+}
+
+.logo > h1 {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 24px;
+
+  cursor: pointer;
+}
+
+.current-date {
+  display: flex;
+  align-items: center;
+}
+
+.date-display {
+  min-width: 120px;
+  font-style: normal;
+  font-weight: 700;
+}
+
+#year,
+#month-text {
+  font-family: "Pretendard";
+  font-size: 12px;
+  line-height: 16px;
+}
+
+#month {
+  font-family: "Outfit";
+  font-size: 48px;
+  line-height: 56px;
+}
+
+.navigate > ul {
+  display: flex;
+}
+
+#history,
+#calendar,
+#chart {
+  margin: 10px;
+  cursor: pointer;
+}

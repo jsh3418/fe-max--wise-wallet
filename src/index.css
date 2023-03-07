@@ -51,7 +51,7 @@
   line-height: 56px;
 }
 
-.navigate > ul {
+.navigate {
   display: flex;
 }
 
@@ -60,4 +60,16 @@
 #chart {
   margin: 10px;
   cursor: pointer;
+}
+
+#history:hover path,
+#calendar:hover path,
+#chart:hover path {
+  stroke: #fcfcfc;
+}
+
+#history.select path,
+#calendar.select path,
+#chart.select path {
+  stroke: #fcfcfc;
 }

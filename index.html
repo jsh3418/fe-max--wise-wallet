@@ -70,47 +70,47 @@
       </div>
     </header>
 
-    <section>
-      <form>
-        <div>
+    <section class="input-bar">
+      <form class="input-form">
+        <div class="date">
           <label for="date">일자</label>
           <input type="date" id="date" />
         </div>
-        <div>
-          <label for="amount">금액</label>
+        <div class="price">
+          <label for="price">금액</label>
           <div>
             <button>-</button>
-            <input type="number" id="amount" />
+            <input type="number" id="price" />
             <span>원</span>
           </div>
-          <div>
-            <label for="content">내용</label>
-            <input id="content" placeholder="입력하세요" />
-          </div>
-          <div>
-            <label for="pay-type">결제수단</label>
-            <select>
-              <!-- 결제수단 렌더링 -->
-              <option>현금</option>
-              <option>신용카드</option>
-              <option id="add-pay-type">추가하기</option>
-            </select>
-          </div>
-          <div>
-            <label for="category">분류</label>
-            <select>
-              <!-- 카테고리 렌더링 -->
-              <option>생활</option>
-              <option>식비</option>
-              <option>교통</option>
-              <option>쇼핑/뷰티</option>
-              <option>의료/건강</option>
-              <option>문화/여가</option>
-              <option>미분류</option>
-            </select>
-            <button id="submit-button"></button>
-          </div>
         </div>
+        <div class="memo">
+          <label for="memo">내용</label>
+          <input id="memo" placeholder="입력하세요" />
+        </div>
+        <div class="payment">
+          <label for="payment">결제수단</label>
+          <select id="payment">
+            <!-- 결제수단 렌더링 -->
+            <option>현금</option>
+            <option>신용카드</option>
+            <option id="add-payment">추가하기</option>
+          </select>
+        </div>
+        <div class="category">
+          <label for="category">분류</label>
+          <select id="category">
+            <!-- 카테고리 렌더링 -->
+            <option>생활</option>
+            <option>식비</option>
+            <option>교통</option>
+            <option>쇼핑/뷰티</option>
+            <option>의료/건강</option>
+            <option>문화/여가</option>
+            <option>미분류</option>
+          </select>
+        </div>
+        <button id="submit-button"></button>
       </form>
     </section>
 

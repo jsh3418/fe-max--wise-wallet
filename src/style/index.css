@@ -1,14 +1,17 @@
+@import "./theme.css";
+
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 * {
   user-select: none;
+  font-family: var(--font-family-display);
 }
 
 .header {
   width: 100%;
   height: 194px;
-  background: #524d90;
+  background: var(--color-primary);
 
   display: flex;
   justify-content: center;
@@ -18,7 +21,7 @@
   width: 100%;
   min-width: 500px;
   max-width: 1080px;
-  color: #fcfcfc;
+  color: var(--color-white);
 
   display: flex;
   justify-content: space-around;
@@ -27,8 +30,7 @@
 }
 
 .logo > h1 {
-  font-family: "Outfit";
-  font-size: 24px;
+  font-size: var(--font-size-display-small);
   cursor: pointer;
 }
 
@@ -39,21 +41,19 @@
 
 .date-display {
   min-width: 120px;
-  font-style: normal;
-  font-weight: 700;
+  font-weight: var(--font-weight-display-large);
 }
 
 #year,
 #month-text {
-  font-family: "Pretendard";
-  font-size: 12px;
-  line-height: 16px;
+  font-size: var(--font-size-bold-regular);
+  line-height: var(--line-height-bold-regular);
 }
 
 #month {
-  font-family: "Outfit";
-  font-size: 48px;
-  line-height: 56px;
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-display-large);
+  line-height: var(--line-height-display-large);
 }
 
 .navigate {
@@ -70,13 +70,13 @@
 #history:hover path,
 #calendar:hover path,
 #chart:hover path {
-  stroke: #fcfcfc;
+  stroke: var(--color-white);
 }
 
 #history.select path,
 #calendar.select path,
 #chart.select path {
-  stroke: #fcfcfc;
+  stroke: var(--color-white);
 }
 
 .input-bar {
@@ -89,22 +89,23 @@
 .input-form {
   width: 894px;
   height: 76px;
-  top: 162px;
-  background: #fcfcfc;
-  border: 1px solid #524d90;
-  box-shadow: 0px 2px 2px rgba(82, 77, 144, 0.08), 0px 4px 4px rgba(82, 77, 144, 0.1);
+  border: 1px solid var(--color-primary);
   border-radius: 8px;
+  background: var(--color-white);
+  box-shadow: 0px 2px 2px rgba(82, 77, 144, 0.08), 0px 4px 4px rgba(82, 77, 144, 0.1);
 
+  position: absolute;
+  top: 162px;
   display: flex;
   align-items: center;
-  position: absolute;
 }
 
 .input-form > div {
-  display: flex;
-  flex-direction: column;
   padding: 3px 24px;
   border-right: 1px solid #524d90;
+
+  display: flex;
+  flex-direction: column;
 }
 
 .input-form > div:nth-last-child(2) {
@@ -112,12 +113,10 @@
 }
 
 .input-form > div > label {
-  font-family: "Pretendard";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 12px;
-  line-height: 16px;
-  color: #a79fcb;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-bold-regular);
+  line-height: var(--line-height-bold-regular);
+  color: var(--color-primary-alt);
 }
 
 #date,
@@ -126,13 +125,11 @@
 #payment,
 #category {
   width: 88px;
-  font-family: "Pretendard";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
   border: none;
-  color: #524d90;
+  font-weight: var(--font-weight-body);
+  font-size: var(--font-size-bold-large);
+  line-height: var(--line-height-body-regular);
+  color: var(--color-primary);
 }
 
 input[type="number"]::-webkit-outer-spin-button,

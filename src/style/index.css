@@ -85,6 +85,7 @@ body {
 
 .input-bar {
   width: 100%;
+  margin-bottom: 90px;
 
   display: flex;
   justify-content: center;
@@ -134,6 +135,32 @@ body {
   font-size: var(--font-size-bold-large);
   line-height: var(--line-height-body-regular);
   color: var(--color-primary);
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+}
+
+.main-header {
+  width: 100%;
+  min-width: 500px;
+  max-width: 850px;
+  color: var(--color-primary);
+  font-weight: var(--font-weight-body);
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.list-count {
+  font-size: var(--font-size-body-large);
+  line-height: var(--line-height-body-large);
+}
+
+.total {
+  font-size: var(--font-size-body-medium);
+  line-height: var(--line-height-body-medium);
 }
 
 input[type="number"]::-webkit-outer-spin-button,

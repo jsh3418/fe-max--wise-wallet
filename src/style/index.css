@@ -158,9 +158,17 @@ body {
   line-height: var(--line-height-body-large);
 }
 
-.total {
+.total-filter {
   font-size: var(--font-size-body-medium);
   line-height: var(--line-height-body-medium);
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.total-filter > img {
+  width: 20px;
 }
 
 input[type="number"]::-webkit-outer-spin-button,

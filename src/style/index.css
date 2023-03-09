@@ -13,6 +13,10 @@ body {
   background: var(--color-off-white);
 }
 
+::placeholder {
+  color: var(--color-primary-alt);
+}
+
 .header {
   width: 100%;
   height: 194px;
@@ -99,6 +103,7 @@ body {
   border-radius: 8px;
   background: var(--color-white);
   box-shadow: 0px 2px 2px rgba(82, 77, 144, 0.08), 0px 4px 4px rgba(82, 77, 144, 0.1);
+  color: var(--color-primary);
 
   position: absolute;
   top: 162px;
@@ -130,13 +135,42 @@ body {
 #memo,
 #payment,
 #category {
-  width: 88px;
   border: none;
   font-weight: var(--font-weight-body);
   font-size: var(--font-size-bold-large);
   line-height: var(--line-height-body-regular);
   color: var(--color-primary);
   background: var(--color-white);
+}
+
+.date {
+  width: 88px;
+}
+
+.price {
+  width: 134px;
+}
+
+.price-input {
+  display: flex;
+  align-items: center;
+}
+
+#price {
+  width: 100%;
+  text-align: end;
+}
+
+#memo {
+  width: 164px;
+}
+
+#payment {
+  width: 100px;
+}
+
+#category {
+  width: 100px;
 }
 
 .main {

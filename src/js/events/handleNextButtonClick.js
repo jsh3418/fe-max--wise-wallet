@@ -7,7 +7,7 @@ export default () => {
 
   $month.textContent = Number($month.textContent) + 1;
 
-  if ($month.textContent === "13") {
+  if ($month.textContent > 12) {
     $year.textContent = Number($year.textContent) + 1;
     $month.textContent = 1;
   }

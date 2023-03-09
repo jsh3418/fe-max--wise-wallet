@@ -7,7 +7,7 @@ export default () => {
 
   $month.textContent -= 1;
 
-  if ($month.textContent === "0") {
+  if ($month.textContent < 1) {
     $year.textContent -= 1;
     $month.textContent = 12;
   }

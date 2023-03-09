@@ -1,5 +1,6 @@
+import monthNames from "./constants/monthName.js";
+
 const getCurrentDate = () => {
-  const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   const currentDate = new Date();
   const year = currentDate.getFullYear();
   const month = currentDate.getMonth() + 1;

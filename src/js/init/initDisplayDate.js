@@ -21,6 +21,4 @@ const initDisplayDate = () => {
   $monthName.textContent = monthName;
 };
 
-export default () => {
-  initDisplayDate();
-};
+export default initDisplayDate;

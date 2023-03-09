@@ -59,7 +59,7 @@ body {
 }
 
 #year,
-#month-text {
+#month-name {
   font-size: var(--font-size-bold-regular);
   line-height: var(--line-height-bold-regular);
 }

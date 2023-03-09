@@ -1,9 +1,9 @@
 import getCurrentDate from "../utils/getCurrentDate.js";
-import monthNames from "../constants/monthNames.js";
+import MONTH_NAMES from "../constants/MONTH_NAMES.js";
 
 export default () => {
   const { year, month } = getCurrentDate();
-  const monthName = monthNames[month - 1];
+  const monthName = MONTH_NAMES[month - 1];
 
   const $year = document.querySelector("#year");
   const $month = document.querySelector("#month");

@@ -1,3 +1,4 @@
+@import "reset.css";
 @import "./theme.css";
 
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
@@ -135,6 +136,7 @@ body {
   font-size: var(--font-size-bold-large);
   line-height: var(--line-height-body-regular);
   color: var(--color-primary);
+  background: var(--color-white);
 }
 
 .main {

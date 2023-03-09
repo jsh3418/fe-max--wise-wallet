@@ -124,18 +124,56 @@
     </section>
 
     <main class="main">
-      <header class="main-header">
-        <div class="list-count">
-          <span>전체 내역 0건</span>
+      <div class="main-container">
+        <header class="main-header">
+          <div class="list-count">
+            <span>전체 내역 0건</span>
+          </div>
+          <div class="total-filter">
+            <img src="/src/assets/check-box-default.svg" />
+            <span id="total-income">수입 0</span>
+            <img src="/src/assets/check-box-default.svg" />
+            <span id="total-expense">지출 0</span>
+          </div>
+        </header>
+        <div id="content">
+          <!-- 내역 예시 -->
+          <div class="content-date-info">
+            <div class="content-date-day">
+              <span class="content-date">2월 15일</span>
+              <span class="content-day">수</span>
+            </div>
+            <div class="content-income-expenditure">
+              <div class="content-income">
+                <span class="content-income-text">수입</span>
+                <span class="content-income-value">0</span>
+                <span class="content-income-value-unit">원</span>
+              </div>
+              <div class="content-expenditure">
+                <span class="content-expenditure-text">지출</span>
+                <span class="content-expenditure-value">0</span>
+                <span class="content-expenditure-value-unit">원</span>
+              </div>
+            </div>
+          </div>
+          <div class="content-detail">
+            <ul class="content-detail-ul">
+              <li>
+                <div class="content-detail-category">문화/여가</div>
+                <div class="content-detail-body">스트리밍 서비스 정기 결제</div>
+                <div class="content-detail-payment">현대카드</div>
+                <div class="content-detail-price">-10,900원</div>
+              </li>
+              <li>
+                <div class="content-detail-category">교통</div>
+                <div class="content-detail-body">후불 교통비 결제</div>
+                <div class="content-detail-payment">현대카드</div>
+                <div class="content-detail-price">-45,340원</div>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="total-filter">
-          <img src="/src/assets/check-box-default.svg" />
-          <span id="total-income">수입 0</span>
-          <img src="/src/assets/check-box-default.svg" />
-          <span id="total-expense">지출 0</span>
-        </div>
-      </header>
-      <div id="content-list"></div>
+      </div>
     </main>
   </body>
 </html>

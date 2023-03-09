@@ -44,6 +44,7 @@ body {
 
 .logo > h1 {
   font-size: var(--font-size-display-small);
+  font-weight: var(--font-weight-display-small);
   cursor: pointer;
 }
 

@@ -48,7 +48,7 @@ body {
   cursor: pointer;
 }
 
-.current-date {
+.header-date-display {
   display: flex;
   align-items: center;
 }

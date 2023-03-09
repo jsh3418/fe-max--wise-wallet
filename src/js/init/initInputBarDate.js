@@ -4,7 +4,5 @@ export default () => {
   const $date = document.querySelector("#date");
   const currentDate = getCurrentDate();
 
-  $date.value = Object.values(currentDate)
-    .map((element) => (element < 10 ? element.toString().padStart(2, "0") : element))
-    .join("");
+  $date.value = Object.values(currentDate).reduce((acc, cur) => (cur < 10 ? acc.toString() + "0" + cur : acc + cur));
 };

@@ -1,4 +1,4 @@
-import monthNames from "../constants/monthNames.js";
+import MONTH_NAMES from "../constants/MONTH_NAMES.js";
 
 export default () => {
   const $year = document.querySelector("#year");
@@ -12,5 +12,5 @@ export default () => {
     $month.textContent = 1;
   }
 
-  $monthName.textContent = monthNames[$month.textContent - 1];
+  $monthName.textContent = MONTH_NAMES[$month.textContent - 1];
 };

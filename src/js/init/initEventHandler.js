@@ -1,5 +1,5 @@
-import handleNextButtonClick from "./events/handleNextButtonClick.js";
-import handlePrevButtonClick from "./events/handlePrevButtonClick.js";
+import handlePrevButtonClick from "../events/handlePrevButtonClick.js";
+import handleNextButtonClick from "../events/handleNextButtonClick.js";
 
 export default () => {
   const $prevButton = document.querySelector(".prev-button");

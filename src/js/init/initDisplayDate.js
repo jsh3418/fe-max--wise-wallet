@@ -1,4 +1,4 @@
-import monthNames from "./constants/monthName.js";
+import monthNames from "../constants/monthName.js";
 
 const getCurrentDate = () => {
   const currentDate = new Date();

@@ -1,5 +1,5 @@
-import initDisplayDate from "./js/initDisplayDate.js";
-import initEventHandler from "./js/initEventHandler.js";
+import initDisplayDate from "./js/init/initDisplayDate.js";
+import initEventHandler from "./js/init/initEventHandler.js";
 
 const init = () => {
   initEventHandler();

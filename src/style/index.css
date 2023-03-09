@@ -53,6 +53,20 @@ body {
   align-items: center;
 }
 
+.prev-button,
+.next-button {
+  width: 100px;
+  height: 100px;
+
+  display: flex;
+  cursor: pointer;
+}
+
+.prev-button > img,
+.next-button > img {
+  margin: auto;
+}
+
 .date-display {
   min-width: 120px;
   font-weight: var(--font-weight-display-large);

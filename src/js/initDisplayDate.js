@@ -11,13 +11,13 @@ const getCurrentDate = () => {
 const initDisplayDate = () => {
   const [year, month, monthName] = getCurrentDate();
 
-  const $displayDateYear = document.querySelector("#year");
-  const $displayDateMonth = document.querySelector("#month");
-  const $displayDateMonthName = document.querySelector("#month-name");
+  const $year = document.querySelector("#year");
+  const $month = document.querySelector("#month");
+  const $monthName = document.querySelector("#month-name");
 
-  $displayDateYear.textContent = year;
-  $displayDateMonth.textContent = month;
-  $displayDateMonthName.textContent = monthName;
+  $year.textContent = year;
+  $month.textContent = month;
+  $monthName.textContent = monthName;
 };
 
 export default () => {

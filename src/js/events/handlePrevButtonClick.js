@@ -1,4 +1,4 @@
-import monthNames from "../constants/monthName.js";
+import monthNames from "../constants/monthNames.js";
 
 export default () => {
   const $year = document.querySelector("#year");

@@ -225,12 +225,17 @@ body {
   justify-content: center;
 }
 
-.main-header {
+.main-container {
   width: 100%;
   min-width: 500px;
   max-width: 850px;
   color: var(--color-primary);
   font-weight: var(--font-weight-body);
+}
+
+.main-header {
+  width: 100%;
+  margin-bottom: 28px;
 
   display: flex;
   justify-content: space-between;
@@ -252,6 +257,119 @@ body {
 
 .total-filter > img {
   width: 20px;
+}
+
+.content-date-info {
+  font-size: var(--font-size-bold-medium);
+  margin-bottom: 20px;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.content-day {
+  color: var(--color-primary-alt);
+}
+
+.content-income-expenditure {
+  color: var(--color-primary-alt);
+
+  display: flex;
+  gap: 8px;
+}
+
+.content-detail-ul > li {
+  padding: 16px;
+  border-top: 1px solid var(--color-primary-alt);
+  font-family: var(--font-family-bold);
+  font-size: var(--font-size-body-medium);
+  font-weight: var(--font-weight-body);
+  line-height: var(--line-height-display-small);
+
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.content-detail-ul > li:last-of-type {
+  border-bottom: 1px solid var(--color-primary-alt);
+}
+
+.content-detail-category-container {
+  border-radius: 25px;
+  padding: 4px 0px;
+}
+
+.content-detail-category {
+  width: 92px;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-bold-medium);
+  text-align: center;
+  color: var(--color-off-white);
+}
+
+.content-detail-category-container.living {
+  background: var(--color-category-navy);
+}
+
+.content-detail-category-container.food {
+  background: var(--color-category-blue);
+}
+
+.content-detail-category-container.transportation {
+  background: var(--color-category-mint);
+}
+
+.content-detail-category-container.shopping {
+  background: var(--color-category-cyan);
+}
+
+.content-detail-category-container.health {
+  background: var(--color-category-sky);
+}
+
+.content-detail-category-container.culture {
+  background: var(--color-category-pink);
+}
+
+.content-detail-category-container.etc {
+  background: var(--color-category-purple);
+}
+
+.content-detail-category-container.salary {
+  background: var(--color-category-green);
+}
+
+.content-detail-category-container.pocketmoney {
+  background: var(--color-category-yellow);
+}
+
+.content-detail-category-container.income-etc {
+  background: var(--color-category-orange);
+}
+
+.content-detail-body {
+  width: 100%;
+}
+
+.content-detail-payment {
+  min-width: 120px;
+  text-align: center;
+  color: var(--color-primary-alt);
+}
+
+.content-detail-price {
+  width: 100%;
+  text-align: end;
+  font-family: var(--font-family-bold);
+}
+
+.content-detail-price.income {
+  color: var(--color-secondary-cyan);
+}
+
+.content-detail-price.expenditure {
+  color: var(--color-secondary-red);
 }
 
 input[type="number"]::-webkit-outer-spin-button,

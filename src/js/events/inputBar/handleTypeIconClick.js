@@ -1,6 +1,6 @@
-import SOURCE from "../../constants/SOURCE.js";
+import { SOURCE } from "../../constants/SOURCE.js";
 
-const handleTypeIconClick = ({ target }) => {
+export const handleTypeIconClick = ({ target }) => {
   target.classList.toggle("income");
   target.classList.toggle("expenditure");
 
@@ -12,5 +12,3 @@ const handleTypeIconClick = ({ target }) => {
 
   target.src = SOURCE.PLUS_ICON;
 };
-
-export default handleTypeIconClick;

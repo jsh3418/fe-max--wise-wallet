@@ -1,4 +1,4 @@
-const handlePriceInputKeyup = ({ target }) => {
+export const handlePriceInputKeyup = ({ target }) => {
   const targetValue = Number(target.value.split(",").join(""));
 
   if (isNaN(targetValue) || targetValue === 0) {
@@ -9,5 +9,3 @@ const handlePriceInputKeyup = ({ target }) => {
 
   target.value = targetValue.toLocaleString("ko-KR");
 };
-
-export default handlePriceInputKeyup;

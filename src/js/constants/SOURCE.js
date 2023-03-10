@@ -1,4 +1,4 @@
-const SOURCE = {
+export const SOURCE = {
   CHECK_BOX_DEFAULT: "/src/assets/check-box-default.svg",
   CHECK_BOX_SELECTED: "/src/assets/check-box-selected.svg",
   DELETE_ICON: "/src/assets/delete-icon.svg",
@@ -9,5 +9,3 @@ const SOURCE = {
   RIGHT_ARROW: "/src/assets/right_arrow.svg",
   SUBMIT_BUTTON: "/src/assets/submit-button.svg",
 };
-
-export default SOURCE;

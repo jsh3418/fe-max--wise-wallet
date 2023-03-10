@@ -1,7 +1,7 @@
-import showElement from "../../utils/showElement.js";
-import hideElement from "../../utils/hideElement.js";
+import { showElement } from "../../utils/showElement.js";
+import { hideElement } from "../../utils/hideElement.js";
 
-const handlePaymentClick = () => {
+export const handlePaymentClick = () => {
   const $payment = document.querySelector("#payment");
   const $paymentDropdown = document.querySelector(".payment-dropdown");
 
@@ -17,5 +17,3 @@ const handleDropdownBlur = ($payment, $paymentDropdown) => {
 
   $payment.addEventListener("blur", hideDropDown);
 };
-
-export default handlePaymentClick;

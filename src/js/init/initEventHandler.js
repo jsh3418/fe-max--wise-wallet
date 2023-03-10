@@ -2,6 +2,7 @@ import handlePrevButtonClick from "../events/handlePrevButtonClick.js";
 import handleNextButtonClick from "../events/handleNextButtonClick.js";
 import handleTypeIconClick from "../events/handleTypeIconClick.js";
 import handlePriceInputKeyup from "../events/handlePriceInputKeyup.js";
+import inputBarEventHandler from "../events/inputBar/index.js";
 
 const initEventHandler = () => {
   const $prevButton = document.querySelector(".prev-button");
@@ -13,6 +14,8 @@ const initEventHandler = () => {
   $nextButton.addEventListener("click", handleNextButtonClick);
   $typeIcon.addEventListener("click", handleTypeIconClick);
   $priceInput.addEventListener("keyup", handlePriceInputKeyup);
+
+  inputBarEventHandler();
 };
 
 export default initEventHandler;

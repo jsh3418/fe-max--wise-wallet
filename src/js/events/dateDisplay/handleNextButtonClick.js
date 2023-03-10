@@ -1,4 +1,4 @@
-import MONTH_NAMES from "../constants/MONTH_NAMES.js";
+import MONTH_NAMES from "../../constants/MONTH_NAMES.js";
 
 const handleNextButtonClick = () => {
   const $month = document.querySelector("#month");

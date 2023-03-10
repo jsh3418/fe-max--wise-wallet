@@ -1,4 +1,4 @@
-import SOURCE from "../constants/SOURCE.js";
+import SOURCE from "../../constants/SOURCE.js";
 
 const handleTypeIconClick = ({ target }) => {
   target.classList.toggle("income");

@@ -1,6 +1,7 @@
 const SOURCE = {
   CHECK_BOX_DEFAULT: "/src/assets/check-box-default.svg",
   CHECK_BOX_SELECTED: "/src/assets/check-box-selected.svg",
+  DELETE_ICON: "/src/assets/delete-icon.svg",
   DROPDOWN_ICON: "/src/assets/dropdown-icon.svg",
   LEFT_ARROW: "/src/assets/left_arrow.svg",
   MINUS_ICON: "/src/assets/minus-icon.svg",

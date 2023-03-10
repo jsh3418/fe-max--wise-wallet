@@ -1,4 +1,4 @@
-export default () => {
+const getCurrentDate = () => {
   const currentDate = new Date();
   const year = currentDate.getFullYear();
   const month = currentDate.getMonth() + 1;
@@ -6,3 +6,5 @@ export default () => {
 
   return { year, month, date };
 };
+
+export default getCurrentDate;

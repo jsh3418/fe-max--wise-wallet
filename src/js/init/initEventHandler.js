@@ -3,7 +3,7 @@ import handleNextButtonClick from "../events/handleNextButtonClick.js";
 import handleTypeIconClick from "../events/handleTypeIconClick.js";
 import handlePriceInputKeyup from "../events/handlePriceInputKeyup.js";
 
-export default () => {
+const initEventHandler = () => {
   const $prevButton = document.querySelector(".prev-button");
   const $nextButton = document.querySelector(".next-button");
   const $typeIcon = document.querySelector(".type-icon");
@@ -14,3 +14,5 @@ export default () => {
   $typeIcon.addEventListener("click", handleTypeIconClick);
   $priceInput.addEventListener("keyup", handlePriceInputKeyup);
 };
+
+export default initEventHandler;

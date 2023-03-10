@@ -1,7 +1,7 @@
 import getCurrentDate from "../utils/getCurrentDate.js";
 import MONTH_NAMES from "../constants/MONTH_NAMES.js";
 
-export default () => {
+const initDisplayDate = () => {
   const { year, month } = getCurrentDate();
   const monthName = MONTH_NAMES[month - 1];
 
@@ -13,3 +13,5 @@ export default () => {
   $month.textContent = month;
   $monthName.textContent = monthName;
 };
+
+export default initDisplayDate;

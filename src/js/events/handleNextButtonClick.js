@@ -1,6 +1,6 @@
 import MONTH_NAMES from "../constants/MONTH_NAMES.js";
 
-export default () => {
+const handleNextButtonClick = () => {
   const $month = document.querySelector("#month");
   const $monthName = document.querySelector("#month-name");
 
@@ -15,3 +15,5 @@ export default () => {
 
   $monthName.textContent = MONTH_NAMES[$month.textContent - 1];
 };
+
+export default handleNextButtonClick;

@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" />
     <link rel="stylesheet" href="/src/style/index.css" />
     <title>khundi의 가계부</title>
   </head>
@@ -14,16 +13,16 @@
         <div class="logo">
           <h1>Wise Wallet</h1>
         </div>
-        <div class="current-date">
-          <div class="left-arrow">
+        <div class="header-date-display">
+          <div class="prev-button">
             <img src="/src/assets/left_arrow.svg" />
           </div>
           <div class="date-display">
-            <div id="year">2023</div>
-            <div id="month">3</div>
-            <div id="month-text">march</div>
+            <div id="year">1995</div>
+            <div id="month">1</div>
+            <div id="month-name">january</div>
           </div>
-          <div class="right-arrow">
+          <div class="next-button">
             <img src="/src/assets/right_arrow.svg" />
           </div>
         </div>
@@ -78,9 +77,9 @@
         </div>
         <div class="price">
           <label for="price">금액</label>
-          <div>
-            <button>-</button>
-            <input type="number" id="price" />
+          <div class="price-input">
+            <img class="type-icon expenditure" src="/src/assets/minus-icon.svg" />
+            <input type="text" id="price" placeholder="0" />
             <span>원</span>
           </div>
         </div>
@@ -90,43 +89,101 @@
         </div>
         <div class="payment">
           <label for="payment">결제수단</label>
-          <select id="payment">
-            <!-- 결제수단 렌더링 -->
-            <option>현금</option>
-            <option>신용카드</option>
-            <option id="add-payment">추가하기</option>
-          </select>
+          <div id="payment">
+            <span class="payment-text">선택하세요</span>
+            <img src="/src/assets/dropdown-icon.svg" />
+          </div>
+          <div class="payment-dropdown display-none">
+            <ul class="payment-dropdown-ul">
+              <li>
+                <span>현금</span>
+                <img class="payment-list-delete" src="/src/assets/delete-icon.svg" />
+              </li>
+              <li>
+                <span>신용카드</span>
+                <img class="payment-list-delete" src="/src/assets/delete-icon.svg" />
+              </li>
+              <li id="add-payment">추가하기</li>
+            </ul>
+          </div>
         </div>
         <div class="category">
           <label for="category">분류</label>
-          <select id="category">
-            <!-- 카테고리 렌더링 -->
-            <option>생활</option>
-            <option>식비</option>
-            <option>교통</option>
-            <option>쇼핑/뷰티</option>
-            <option>의료/건강</option>
-            <option>문화/여가</option>
-            <option>미분류</option>
-          </select>
+          <div id="category">
+            <span class="category-text">선택하세요</span>
+            <img src="/src/assets/dropdown-icon.svg" />
+          </div>
+          <div class="category-dropdown">
+            <ul class="category-dropdown-ul">
+              <li>생활</li>
+              <li>식비</li>
+              <li>교통</li>
+              <li>쇼핑/뷰티</li>
+              <li>의료/건강</li>
+              <li>문화/여가</li>
+              <li>미분류</li>
+            </ul>
+          </div>
         </div>
-        <button id="submit-button"></button>
+        <img class="submit-button" src="/src/assets/submit-button.svg" />
       </form>
     </section>
 
-    <main>
-      <header>
-        <div>
-          <span>전체 내역 0건</span>
+    <main class="main">
+      <div class="main-container">
+        <header class="main-header">
+          <div class="list-count">전체 내역 0건</div>
+          <div class="total-filter">
+            <img src="/src/assets/check-box-default.svg" />
+            <span id="total-income">수입 0</span>
+            <img src="/src/assets/check-box-default.svg" />
+            <span id="total-expenditure">지출 0</span>
+          </div>
+        </header>
+        <div id="content">
+          <!-- 내역 예시 -->
+          <div class="content-date-info">
+            <div class="content-date-day">
+              <span class="content-date">3월 15일</span>
+              <span class="content-day">수</span>
+            </div>
+            <div class="content-income-expenditure">
+              <div class="content-income display-none">
+                <span class="content-income-text">수입</span>
+                <span class="content-income-value">0원</span>
+              </div>
+              <div class="content-expenditure">
+                <span class="content-expenditure-text">지출</span>
+                <span class="content-expenditure-value">0원</span>
+              </div>
+            </div>
+          </div>
+          <div class="content-detail">
+            <ul class="content-detail-ul">
+              <li>
+                <div class="content-detail-category-container culture">
+                  <div class="content-detail-category">문화/여가</div>
+                </div>
+                <div class="content-detail-body">스트리밍 서비스 정기 결제</div>
+                <div class="content-detail-payment">현대카드</div>
+                <div class="content-detail-price expenditure">-10,900원</div>
+              </li>
+              <li>
+                <div class="content-detail-category-container transportation">
+                  <div class="content-detail-category">교통</div>
+                </div>
+                <div class="content-detail-body">후불 교통비 결제</div>
+                <div class="content-detail-payment">현대카드</div>
+                <div class="content-detail-price expenditure">-45,340원</div>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div>
-          <input type="checkbox" />
-          <span id="all-income">수입 0</span>
-          <input type="checkbox" />
-          <span id="all-expense">지출 0</span>
-        </div>
-      </header>
-      <div id="content-list"></div>
+      </div>
     </main>
+
+    <div class="modal display-none"></div>
+
+    <script type="module" src="/src/index.js"></script>
   </body>
 </html>

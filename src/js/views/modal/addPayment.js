@@ -12,5 +12,5 @@ export const getAddPaymentModalTemplate = () => `
 
 export const getPaymentListChildrenTemplate = (value) => `
 <span>${value}</span>
-<img class="payment-list-delete" src="/src/assets/delete-icon.svg" />
+<img class="payment-dropdown__list-delete" src="/src/assets/delete-icon.svg" />
 `;

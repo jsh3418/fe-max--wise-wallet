@@ -3,7 +3,7 @@ import { showElement } from "../../utils/showElement.js";
 import { getDeletePaymentModalTemplate } from "../../views/modal/deletePayment.js";
 
 export const handlePaymentDeleteButtonClick = ({ target }) => {
-  if (!target.classList.contains("payment-list-delete")) return;
+  if (!target.classList.contains("payment-dropdown__list-delete")) return;
 
   const $modal = document.querySelector(".modal");
   const targetPaymentText = target.previousElementSibling.textContent;

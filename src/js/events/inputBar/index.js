@@ -5,10 +5,10 @@ import { handlePaymentDeleteButtonClick } from "./handlePaymentDeleteButtonClick
 import { handlePaymentListClick } from "./handlePaymentListClick.js";
 
 export const inputBarEventHandler = () => {
-  const $typeIcon = document.querySelector(".type-icon");
-  const $priceInput = document.querySelector("#price");
-  const $payment = document.querySelector("#payment");
-  const $paymentUl = document.querySelector(".payment-dropdown-ul");
+  const $typeIcon = document.querySelector(".input-bar__type-icon");
+  const $priceInput = document.querySelector("#input-bar__price");
+  const $payment = document.querySelector("#input-bar__payment");
+  const $paymentUl = document.querySelector(".payment-dropdown__ul");
 
   $typeIcon.addEventListener("click", handleTypeIconClick);
   $priceInput.addEventListener("keyup", handlePriceInputKeyup);

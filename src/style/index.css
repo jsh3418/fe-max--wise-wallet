@@ -101,9 +101,9 @@ body {
   stroke: var(--color-white);
 }
 
-.navigate__history.selected path,
-.navigate__calendar.selected path,
-.navigate__chart.selected path {
+.navigate__history--selected path,
+.navigate__calendar--selected path,
+.navigate__chart--selected path {
   stroke: var(--color-white);
 }
 

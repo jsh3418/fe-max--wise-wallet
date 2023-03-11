@@ -2,6 +2,7 @@ import { handleTypeIconClick } from "./handleTypeIconClick.js";
 import { handlePriceInputKeyup } from "./handlePriceInputKeyup.js";
 import { handlePaymentClick } from "./handlePaymentClick.js";
 import { handlePaymentDeleteButtonClick } from "./handlePaymentDeleteButtonClick.js";
+import { handlePaymentListClick } from "./handlePaymentListClick.js";
 
 export const inputBarEventHandler = () => {
   const $typeIcon = document.querySelector(".type-icon");
@@ -13,4 +14,5 @@ export const inputBarEventHandler = () => {
   $priceInput.addEventListener("keyup", handlePriceInputKeyup);
   $payment.addEventListener("click", handlePaymentClick);
   $paymentUl.addEventListener("click", handlePaymentDeleteButtonClick);
+  $paymentUl.addEventListener("click", handlePaymentListClick);
 };

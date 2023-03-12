@@ -1,7 +1,5 @@
-class InputBarStore {
-  constructor() {
-    this.transactionType = "expenditure";
-  }
+export const inputBarStore = {
+  transactionType: "expenditure",
 
   toggleTransactionType() {
     if (this.transactionType === "expenditure") {
@@ -15,7 +13,5 @@ class InputBarStore {
 
       return;
     }
-  }
-}
-
-export const inputBarStore = new InputBarStore();
+  },
+};

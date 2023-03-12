@@ -5,6 +5,14 @@ import { getAddPaymentModalTemplate, getPaymentListChildrenTemplate } from "../.
 export const handlePaymentListClick = ({ target }) => {
   if (target.classList.contains("payment-dropdown__ul") || target.classList.contains("payment-dropdown__list-delete")) return;
 
+  if (target.classList.contains("payment-dropdown__list")) {
+    const $dropdown = document.querySelector(".payment-dropdown");
+    const $paymentText = document.querySelector(".input-bar__payment-text");
+
+    hideElement($dropdown);
+    $paymentText.textContent = target.textContent;
+  }
+
   if (target.classList.contains("payment-dropdown__add-button")) {
     const $modal = document.querySelector(".modal");
     const modalTemplate = getAddPaymentModalTemplate();

@@ -1,7 +1,17 @@
 import { TRANSACTION_TYPE } from "../constants/TRANSACTION_TYPE.js";
+import { getCurrentDate } from "../utils/getCurrentDate.js";
 
 export const inputBarStore = {
+  date: getCurrentDate(),
   transactionType: TRANSACTION_TYPE.EXPENDITURE,
+  price: null,
+  memo: null,
+  payment: null,
+  category: null,
+
+  setDate(date) {
+    this.date = date;
+  },
 
   toggleTransactionType() {
     if (this.transactionType === TRANSACTION_TYPE.EXPENDITURE) {

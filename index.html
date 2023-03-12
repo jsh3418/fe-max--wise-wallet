@@ -9,26 +9,26 @@
   </head>
   <body>
     <header class="header">
-      <div class="header-container">
+      <div class="header__inner">
         <div class="logo">
-          <h1>Wise Wallet</h1>
+          <h1 class="logo__title">Wise Wallet</h1>
         </div>
-        <div class="header-date-display">
-          <div class="prev-button">
+        <div class="date-display">
+          <div class="date-display__prev-button">
             <img src="/src/assets/left_arrow.svg" />
           </div>
-          <div class="date-display">
-            <div id="year">1995</div>
-            <div id="month">1</div>
-            <div id="month-name">january</div>
+          <div class="date-display__month-year">
+            <div class="date-display__year">1995</div>
+            <div class="date-display__month">1</div>
+            <div class="date-display__month-name">january</div>
           </div>
-          <div class="next-button">
+          <div class="date-display__next-button">
             <img src="/src/assets/right_arrow.svg" />
           </div>
         </div>
         <nav>
           <ul class="navigate">
-            <li id="history" class="select">
+            <li class="navigate__history navigate__history--selected">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z"
@@ -43,7 +43,7 @@
                 <path d="M10 9H9H8" stroke="#A79FCB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
             </li>
-            <li id="calendar">
+            <li class="navigate__calendar">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M19 4H5C3.89543 4 3 4.89543 3 6V20C3 21.1046 3.89543 22 5 22H19C20.1046 22 21 21.1046 21 20V6C21 4.89543 20.1046 4 19 4Z"
@@ -57,7 +57,7 @@
                 <path d="M3 10H21" stroke="#A79FCB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
             </li>
-            <li id="chart">
+            <li class="navigate__chart">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M18 20V10" stroke="#A79FCB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                 <path d="M12 20V4" stroke="#A79FCB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -70,51 +70,51 @@
     </header>
 
     <section class="input-bar">
-      <form class="input-form">
-        <div class="date">
-          <label for="date">일자</label>
-          <input type="number" id="date" />
+      <form class="input-bar__form">
+        <div class="input-bar__date">
+          <label for="input-bar__date">일자</label>
+          <input type="number" id="input-bar__date" />
         </div>
-        <div class="price">
+        <div class="input-bar__price">
           <label for="price">금액</label>
-          <div class="price-input">
-            <img class="type-icon expenditure" src="/src/assets/minus-icon.svg" />
-            <input type="text" id="price" placeholder="0" />
+          <div class="input-bar__price-input">
+            <img class="input-bar__transaction-type expenditure" src="/src/assets/minus-icon.svg" />
+            <input type="text" id="input-bar__price" placeholder="0" />
             <span>원</span>
           </div>
         </div>
-        <div class="memo">
-          <label for="memo">내용</label>
-          <input id="memo" placeholder="입력하세요" />
+        <div class="input-bar__memo">
+          <label for="input-bar__memo">내용</label>
+          <input id="input-bar__memo" placeholder="입력하세요" />
         </div>
-        <div class="payment">
-          <label for="payment">결제수단</label>
-          <div id="payment">
-            <span class="payment-text">선택하세요</span>
+        <div class="input-bar__payment">
+          <label for="input-bar__payment">결제수단</label>
+          <div id="input-bar__payment">
+            <span class="input-bar__payment-text">선택하세요</span>
             <img src="/src/assets/dropdown-icon.svg" />
           </div>
           <div class="payment-dropdown display-none">
-            <ul class="payment-dropdown-ul">
-              <li>
-                <span>현금</span>
-                <img class="payment-list-delete" src="/src/assets/delete-icon.svg" />
+            <ul class="payment-dropdown__ul">
+              <li class="payment-dropdown__list">
+                현금
+                <img class="payment-dropdown__list-delete" src="/src/assets/delete-icon.svg" />
               </li>
-              <li>
-                <span>신용카드</span>
-                <img class="payment-list-delete" src="/src/assets/delete-icon.svg" />
+              <li class="payment-dropdown__list">
+                신용카드
+                <img class="payment-dropdown__list-delete" src="/src/assets/delete-icon.svg" />
               </li>
-              <li id="add-payment">추가하기</li>
+              <li class="payment-dropdown__add-button">추가하기</li>
             </ul>
           </div>
         </div>
-        <div class="category">
-          <label for="category">분류</label>
-          <div id="category">
-            <span class="category-text">선택하세요</span>
+        <div class="input-bar__category">
+          <label for="input-bar__category">분류</label>
+          <div id="input-bar__category">
+            <span class="input-bar__category-text">선택하세요</span>
             <img src="/src/assets/dropdown-icon.svg" />
           </div>
-          <div class="category-dropdown">
-            <ul class="category-dropdown-ul">
+          <div class="category-dropdown display-none">
+            <ul class="category-dropdown__ul">
               <li>생활</li>
               <li>식비</li>
               <li>교통</li>
@@ -125,56 +125,56 @@
             </ul>
           </div>
         </div>
-        <img class="submit-button" src="/src/assets/submit-button.svg" />
+        <img class="input-bar__submit-button" src="/src/assets/submit-button.svg" />
       </form>
     </section>
 
     <main class="main">
-      <div class="main-container">
-        <header class="main-header">
-          <div class="list-count">전체 내역 0건</div>
-          <div class="total-filter">
+      <div class="main__inner">
+        <header class="content-header">
+          <div class="content-header__list-count">전체 내역 0건</div>
+          <div class="content-header__total-filter">
             <img src="/src/assets/check-box-default.svg" />
-            <span id="total-income">수입 0</span>
+            <span id="content-header__total-income">수입 0</span>
             <img src="/src/assets/check-box-default.svg" />
-            <span id="total-expenditure">지출 0</span>
+            <span id="content-header__total-expenditure">지출 0</span>
           </div>
         </header>
         <div id="content">
           <!-- 내역 예시 -->
-          <div class="content-date-info">
-            <div class="content-date-day">
-              <span class="content-date">3월 15일</span>
-              <span class="content-day">수</span>
+          <div class="content-info">
+            <div>
+              <span class="content-info__date">3월 15일</span>
+              <span class="content-info__day">수</span>
             </div>
-            <div class="content-income-expenditure">
-              <div class="content-income display-none">
-                <span class="content-income-text">수입</span>
-                <span class="content-income-value">0원</span>
+            <div class="content-info__income-expenditure">
+              <div class="content-info__income display-none">
+                <span class="content-info__income-text">수입</span>
+                <span class="content-info__income-value">0원</span>
               </div>
-              <div class="content-expenditure">
-                <span class="content-expenditure-text">지출</span>
-                <span class="content-expenditure-value">0원</span>
+              <div class="content-info__expenditure">
+                <span class="content-info__expenditure-text">지출</span>
+                <span class="content-info__expenditure-value">0원</span>
               </div>
             </div>
           </div>
           <div class="content-detail">
-            <ul class="content-detail-ul">
+            <ul class="content-detail__container">
               <li>
-                <div class="content-detail-category-container culture">
-                  <div class="content-detail-category">문화/여가</div>
+                <div class="content-detail__category-container culture">
+                  <div class="content-detail__category">문화/여가</div>
                 </div>
-                <div class="content-detail-body">스트리밍 서비스 정기 결제</div>
-                <div class="content-detail-payment">현대카드</div>
-                <div class="content-detail-price expenditure">-10,900원</div>
+                <div class="content-detail__body">스트리밍 서비스 정기 결제</div>
+                <div class="content-detail__payment">현대카드</div>
+                <div class="content-detail__price expenditure">-10,900원</div>
               </li>
               <li>
-                <div class="content-detail-category-container transportation">
-                  <div class="content-detail-category">교통</div>
+                <div class="content-detail__category-container transportation">
+                  <div class="content-detail__category">교통</div>
                 </div>
-                <div class="content-detail-body">후불 교통비 결제</div>
-                <div class="content-detail-payment">현대카드</div>
-                <div class="content-detail-price expenditure">-45,340원</div>
+                <div class="content-detail__body">후불 교통비 결제</div>
+                <div class="content-detail__payment">현대카드</div>
+                <div class="content-detail__price expenditure">-45,340원</div>
               </li>
             </ul>
           </div>

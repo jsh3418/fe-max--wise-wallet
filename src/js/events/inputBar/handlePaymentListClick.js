@@ -3,17 +3,19 @@ import { hideElement } from "../../utils/hideElement.js";
 import { getAddPaymentModalTemplate, getPaymentListChildrenTemplate } from "../../views/modal/addPayment.js";
 
 export const handlePaymentListClick = ({ target }) => {
-  if (target.classList.contains("payment-dropdown__ul") || target.classList.contains("payment-dropdown__list-delete")) return;
+  if (isValidClick(target)) return;
 
-  if (target.classList.contains("payment-dropdown__list")) {
+  if (isDropdownListClick(target)) {
     const $dropdown = document.querySelector(".payment-dropdown");
     const $paymentText = document.querySelector(".input-bar__payment-text");
 
     hideElement($dropdown);
     $paymentText.textContent = target.textContent;
+
+    return;
   }
 
-  if (target.classList.contains("payment-dropdown__add-button")) {
+  if (isAddButtonClick(target)) {
     const $modal = document.querySelector(".modal");
     const modalTemplate = getAddPaymentModalTemplate();
 
@@ -22,6 +24,10 @@ export const handlePaymentListClick = ({ target }) => {
     showElement($modal);
   }
 };
+
+const isValidClick = (target) => target.classList.contains("payment-dropdown__ul") || target.classList.contains("payment-dropdown__list-delete");
+const isDropdownListClick = (target) => target.classList.contains("payment-dropdown__list");
+const isAddButtonClick = (target) => target.classList.contains("payment-dropdown__add-button");
 
 const setModalTemplate = (element, template) => {
   element.innerHTML = template;

@@ -14,4 +14,8 @@ export const inputBarStore = {
       return;
     }
   },
+
+  isTransactionExpenditure() {
+    return this.transactionType === "expenditure";
+  },
 };

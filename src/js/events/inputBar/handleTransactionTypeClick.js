@@ -1,14 +1,14 @@
 import { SOURCE } from "../../constants/SOURCE.js";
+import { inputBarStore } from "../../store/inputBarStore.js";
 
 export const handleTransactionTypeClick = ({ target }) => {
-  target.classList.toggle("income");
-  target.classList.toggle("expenditure");
+  inputBarStore.toggleTransactionType();
 
-  if (target.classList.contains("expenditure")) {
-    target.src = SOURCE.MINUS_ICON;
+  if (inputBarStore.isTransactionExpenditure()) {
+    target.src = SOURCE.PLUS_ICON;
 
     return;
   }
 
-  target.src = SOURCE.PLUS_ICON;
+  target.src = SOURCE.MINUS_ICON;
 };

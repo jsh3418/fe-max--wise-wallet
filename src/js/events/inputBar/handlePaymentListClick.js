@@ -3,7 +3,7 @@ import { hideElement } from "../../utils/hideElement.js";
 import { getAddPaymentModalTemplate, getPaymentListChildrenTemplate } from "../../views/modal/addPayment.js";
 
 export const handlePaymentListClick = ({ target }) => {
-  if (isValidClick(target)) return;
+  if (isInvalidClick(target)) return;
 
   if (isDropdownListClick(target)) {
     const $dropdown = document.querySelector(".payment-dropdown");
@@ -25,7 +25,7 @@ export const handlePaymentListClick = ({ target }) => {
   }
 };
 
-const isValidClick = (target) => target.classList.contains("payment-dropdown__ul") || target.classList.contains("payment-dropdown__list-delete");
+const isInvalidClick = (target) => target.classList.contains("payment-dropdown__ul") || target.classList.contains("payment-dropdown__list-delete");
 const isDropdownListClick = (target) => target.classList.contains("payment-dropdown__list");
 const isAddButtonClick = (target) => target.classList.contains("payment-dropdown__add-button");
 

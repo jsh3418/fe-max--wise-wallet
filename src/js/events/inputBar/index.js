@@ -1,11 +1,13 @@
 import { handleTransactionTypeClick } from "./handleTransactionTypeClick.js";
-import { handlePriceInputKeyup } from "./handlePriceInputKeyup.js";
+import { handlePriceInputKeydown } from "./handlePriceInputKeydown.js";
 import { handlePaymentClick } from "./handlePaymentClick.js";
 import { handlePaymentDeleteButtonClick } from "./handlePaymentDeleteButtonClick.js";
 import { handlePaymentListClick } from "./handlePaymentListClick.js";
 import { handleCategoryClick } from "./handleCategoryClick.js";
 import { handleDateChange } from "./handleDateChange.js";
 import { handleMemoKeyup } from "./handleMemoKeyup.js";
+import { handlePriceInputFocus } from "./handlePriceInputFocus.js";
+import { handlePriceInputBlur } from "./handlePriceInputBlur.js";
 
 export const inputBarEventHandler = () => {
   const $date = document.querySelector("#input-bar__date");
@@ -18,7 +20,9 @@ export const inputBarEventHandler = () => {
 
   $date.addEventListener("change", handleDateChange);
   $typeIcon.addEventListener("click", handleTransactionTypeClick);
-  $priceInput.addEventListener("keyup", handlePriceInputKeyup);
+  $priceInput.addEventListener("keydown", handlePriceInputKeydown);
+  $priceInput.addEventListener("blur", handlePriceInputBlur);
+  $priceInput.addEventListener("focus", handlePriceInputFocus);
   $payment.addEventListener("click", handlePaymentClick);
   $paymentUl.addEventListener("click", handlePaymentDeleteButtonClick);
   $paymentUl.addEventListener("click", handlePaymentListClick);

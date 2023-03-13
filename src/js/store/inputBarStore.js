@@ -4,13 +4,21 @@ import { getCurrentDate } from "../utils/getCurrentDate.js";
 export const inputBarStore = {
   date: getCurrentDate(),
   transactionType: TRANSACTION_TYPE.EXPENDITURE,
-  price: null,
+  price: "",
   memo: null,
   payment: null,
   category: null,
 
   setDate(date) {
     this.date = date;
+  },
+
+  setPrice(price) {
+    this.price = price;
+  },
+
+  getPrice() {
+    return this.price;
   },
 
   setMemo(memo) {

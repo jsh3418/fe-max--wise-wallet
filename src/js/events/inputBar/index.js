@@ -5,6 +5,7 @@ import { handlePaymentDeleteButtonClick } from "./handlePaymentDeleteButtonClick
 import { handlePaymentListClick } from "./handlePaymentListClick.js";
 import { handleCategoryClick } from "./handleCategoryClick.js";
 import { handleDateChange } from "./handleDateChange.js";
+import { handleMemoKeyup } from "./handleMemoKeyup.js";
 
 export const inputBarEventHandler = () => {
   const $date = document.querySelector("#input-bar__date");
@@ -13,6 +14,7 @@ export const inputBarEventHandler = () => {
   const $payment = document.querySelector("#input-bar__payment");
   const $paymentUl = document.querySelector(".payment-dropdown__ul");
   const $category = document.querySelector("#input-bar__category");
+  const $memo = document.querySelector("#input-bar__memo");
 
   $date.addEventListener("change", handleDateChange);
   $typeIcon.addEventListener("click", handleTransactionTypeClick);
@@ -21,4 +23,5 @@ export const inputBarEventHandler = () => {
   $paymentUl.addEventListener("click", handlePaymentDeleteButtonClick);
   $paymentUl.addEventListener("click", handlePaymentListClick);
   $category.addEventListener("click", handleCategoryClick);
+  $memo.addEventListener("keyup", handleMemoKeyup);
 };

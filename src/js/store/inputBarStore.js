@@ -13,6 +13,10 @@ export const inputBarStore = {
     this.date = date;
   },
 
+  setMemo(memo) {
+    this.memo = memo;
+  },
+
   toggleTransactionType() {
     if (this.transactionType === TRANSACTION_TYPE.EXPENDITURE) {
       this.transactionType = TRANSACTION_TYPE.INCOME;

@@ -25,6 +25,10 @@ export const inputBarStore = {
     this.memo = memo;
   },
 
+  setPayment(payment) {
+    this.payment = payment;
+  },
+
   toggleTransactionType() {
     if (this.transactionType === TRANSACTION_TYPE.EXPENDITURE) {
       this.transactionType = TRANSACTION_TYPE.INCOME;

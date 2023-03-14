@@ -5,7 +5,7 @@ import { incomeTemplate } from "../../views/category/income.js";
 
 export const handleTransactionTypeClick = ({ target }) => {
   inputBarStore.toggleTransactionType();
-  resetCategory();
+  initCategory();
   toggleIconSource(target);
   reRenderCategoryList();
 };
@@ -20,7 +20,7 @@ const toggleIconSource = (target) => {
   target.src = SOURCE.PLUS_ICON;
 };
 
-const resetCategory = () => {
+const initCategory = () => {
   const $categoryText = document.querySelector(".input-bar__category-text");
 
   $categoryText.textContent = "선택하세요";

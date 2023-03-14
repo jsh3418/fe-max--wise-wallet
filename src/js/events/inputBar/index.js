@@ -9,6 +9,7 @@ import { handleDateChange } from "./handleDateChange.js";
 import { handleMemoKeyup } from "./handleMemoKeyup.js";
 import { handlePriceInputFocus } from "./handlePriceInputFocus.js";
 import { handlePriceInputBlur } from "./handlePriceInputBlur.js";
+import { handleFormChangeAndClick } from "./handleFormChangeAndClick.js";
 
 export const inputBarEventHandler = () => {
   const $date = document.querySelector("#input-bar__date");
@@ -19,6 +20,7 @@ export const inputBarEventHandler = () => {
   const $category = document.querySelector("#input-bar__category");
   const $categoryDropdown = document.querySelector(".category-dropdown");
   const $memo = document.querySelector("#input-bar__memo");
+  const $inputBarForm = document.querySelector(".input-bar__form");
 
   $date.addEventListener("change", handleDateChange);
   $typeIcon.addEventListener("click", handleTransactionTypeClick);
@@ -31,4 +33,6 @@ export const inputBarEventHandler = () => {
   $category.addEventListener("click", handleCategoryClick);
   $categoryDropdown.addEventListener("click", handleCategoryListClick);
   $memo.addEventListener("keyup", handleMemoKeyup);
+  $inputBarForm.addEventListener("change", handleFormChangeAndClick);
+  $inputBarForm.addEventListener("click", handleFormChangeAndClick);
 };

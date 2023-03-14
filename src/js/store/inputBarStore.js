@@ -50,4 +50,8 @@ export const inputBarStore = {
   isTransactionExpenditure() {
     return this.transactionType === TRANSACTION_TYPE.EXPENDITURE;
   },
+
+  isAllFill() {
+    return Boolean(this.date && this.price && this.memo && this.payment && this.category);
+  },
 };

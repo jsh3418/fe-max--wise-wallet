@@ -239,6 +239,10 @@ body {
   border-bottom: 0px;
 }
 
+.input-bar__submit-button.active {
+  cursor: pointer;
+}
+
 .main {
   display: flex;
   justify-content: center;

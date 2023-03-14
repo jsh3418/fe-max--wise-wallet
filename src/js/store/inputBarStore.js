@@ -29,6 +29,10 @@ export const inputBarStore = {
     this.payment = payment;
   },
 
+  setCategory(category) {
+    this.category = category;
+  },
+
   toggleTransactionType() {
     if (this.transactionType === TRANSACTION_TYPE.EXPENDITURE) {
       this.transactionType = TRANSACTION_TYPE.INCOME;

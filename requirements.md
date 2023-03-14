@@ -74,5 +74,5 @@
     - [x] inputBarStore에 저장된 카테고리를 렌더링한다.
   - [x] 모든 내용을 입력해야 [확인 버튼]이 활성화 된다.
   - [ ] 확인 버튼을 누르면 수입지출 내역이 저장되고, 아래의 내역 목록에 입력한 내용이 추가된다.
-    - [ ] 입력한 내역을 inputBarStore에서 받아 localStorage에 저장한다.
+    - [x] 입력한 내역을 inputBarStore에서 받아 localStorage에 저장한다.
     - [ ] 내역에 추가한다.

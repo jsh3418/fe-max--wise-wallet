@@ -6,7 +6,7 @@ export const handlePaymentDeleteButtonClick = ({ target }) => {
   if (!target.classList.contains("payment-dropdown__list-delete")) return;
 
   const $modal = document.querySelector(".modal");
-  const targetPaymentText = target.previousSibling.textContent;
+  const targetPaymentText = target.previousElementSibling.textContent;
   const modalTemplate = getDeletePaymentModalTemplate(targetPaymentText);
 
   setModalTemplate($modal, modalTemplate);

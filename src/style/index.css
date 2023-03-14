@@ -163,6 +163,10 @@ body {
   background: var(--color-white);
 }
 
+.input-bar__transaction-type {
+  cursor: pointer;
+}
+
 .input-bar__date {
   width: 88px;
 }
@@ -187,6 +191,7 @@ body {
 
 #input-bar__payment {
   width: 100px;
+  cursor: pointer;
 
   display: flex;
   justify-content: space-between;
@@ -206,6 +211,8 @@ body {
 
 #input-bar__category {
   width: 100px;
+  cursor: pointer;
+
   display: flex;
 }
 

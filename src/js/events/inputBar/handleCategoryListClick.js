@@ -5,6 +5,6 @@ export const handleCategoryListClick = ({ target, currentTarget }) => {
   const $categoryText = document.querySelector(".input-bar__category-text");
 
   $categoryText.textContent = target.textContent;
-  inputBarStore.setCategory(target.textContent);
+  inputBarStore.setCategory(target.dataset.category);
   hideElement(currentTarget);
 };

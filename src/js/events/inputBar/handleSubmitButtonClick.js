@@ -9,15 +9,15 @@ export const handleSubmitButtonClick = () => {
 };
 
 const appendTransactionLocalStorage = () => {
-  const localStorageData = JSON.parse(getTransactionLocalStorage());
+  const localStorageData = getTransactionLocalStorage();
 
   if (localStorageData == null) {
-    setTransactionLocalStorage(JSON.stringify([inputBarStore.getAllProperty()]));
+    setTransactionLocalStorage([inputBarStore.getAllProperty()]);
 
     return;
   }
 
-  const data = JSON.stringify([inputBarStore.getAllProperty(), ...localStorageData]);
+  const data = [inputBarStore.getAllProperty(), ...localStorageData];
 
   setTransactionLocalStorage(data);
 };

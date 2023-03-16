@@ -13,9 +13,9 @@ export const handleDateChange = ({ target }) => {
   }
 
   const date = {
-    year: inputDate.slice(0, 4),
-    month: inputDate.slice(4, 6),
-    date: inputDate.slice(6, 8),
+    year: Number(inputDate.slice(0, 4)),
+    month: Number(inputDate.slice(4, 6)),
+    date: Number(inputDate.slice(6, 8)),
   };
 
   inputBarStore.setDate(date);

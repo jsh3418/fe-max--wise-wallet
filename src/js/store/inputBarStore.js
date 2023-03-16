@@ -31,10 +31,6 @@ export const inputBarStore = {
     return this.date;
   },
 
-  setCreatedAt(createdAt) {
-    this.createdAt = createdAt;
-  },
-
   setPrice(price) {
     this.price = price;
   },
@@ -93,6 +89,7 @@ export const inputBarStore = {
     return {
       id: this.id,
       date: this.date,
+      createdAt: Date.now(),
       transactionType: this.transactionType,
       price: this.price,
       memo: this.memo,

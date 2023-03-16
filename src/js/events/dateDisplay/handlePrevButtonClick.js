@@ -1,17 +1,13 @@
-import { MONTH_NAMES } from "../../constants/MONTH_NAMES.js";
+import { displayDateStore } from "../../store/displayDateStore.js";
 
 export const handlePrevButtonClick = () => {
+  displayDateStore.moveToPrevMonth();
+
+  const $year = document.querySelector(".date-display__year");
   const $month = document.querySelector(".date-display__month");
   const $monthName = document.querySelector(".date-display__month-name");
 
-  $month.textContent -= 1;
-
-  if ($month.textContent < 1) {
-    const $year = document.querySelector(".date-display__year");
-
-    $year.textContent -= 1;
-    $month.textContent = 12;
-  }
-
-  $monthName.textContent = MONTH_NAMES[$month.textContent - 1];
+  $year.textContent = displayDateStore.year;
+  $month.textContent = displayDateStore.month;
+  $monthName.textContent = displayDateStore.monthName;
 };

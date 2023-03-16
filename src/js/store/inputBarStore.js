@@ -1,8 +1,11 @@
 import { TRANSACTION_TYPE } from "../constants/TRANSACTION_TYPE.js";
 import { getCurrentDate } from "../utils/getCurrentDate.js";
+import { getUUID } from "../utils/getUUID.js";
 
 export const inputBarStore = {
+  id: getUUID(),
   date: getCurrentDate(),
+  createdAt: null,
   transactionType: TRANSACTION_TYPE.EXPENDITURE,
   price: "",
   memo: null,
@@ -10,7 +13,9 @@ export const inputBarStore = {
   category: null,
 
   initStore() {
+    this.id = getUUID();
     this.date = getCurrentDate();
+    this.createdAt = null;
     this.transactionType = TRANSACTION_TYPE.EXPENDITURE;
     this.price = "";
     this.memo = null;
@@ -24,6 +29,10 @@ export const inputBarStore = {
 
   getDate() {
     return this.date;
+  },
+
+  setCreatedAt(createdAt) {
+    this.createdAt = createdAt;
   },
 
   setPrice(price) {
@@ -82,6 +91,7 @@ export const inputBarStore = {
 
   getAllProperty() {
     return {
+      id: this.id,
       date: this.date,
       transactionType: this.transactionType,
       price: this.price,

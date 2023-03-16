@@ -10,16 +10,15 @@ export const handleSubmitButtonClick = () => {
 
 const appendTransactionLocalStorage = () => {
   const localStorageData = getTransactionLocalStorage();
+  const data = inputBarStore.getAllProperty();
 
   if (localStorageData == null) {
-    setTransactionLocalStorage([inputBarStore.getAllProperty()]);
+    setTransactionLocalStorage([data]);
 
     return;
   }
 
-  const data = [inputBarStore.getAllProperty(), ...localStorageData];
-
-  setTransactionLocalStorage(data);
+  setTransactionLocalStorage([data, ...localStorageData]);
 };
 
 const initInputBar = () => {

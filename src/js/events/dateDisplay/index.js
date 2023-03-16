@@ -1,10 +1,7 @@
-import { handlePrevButtonClick } from "./handlePrevButtonClick.js";
-import { handleNextButtonClick } from "./handleNextButtonClick.js";
+import { handlePrevOrNextButtonClick } from "./handlePrevOrNextButtonClick.js";
 
 export const dateDisplayEventHandler = () => {
-  const $prevButton = document.querySelector(".date-display__prev-button");
-  const $nextButton = document.querySelector(".date-display__next-button");
+  const $dateDisplay = document.querySelector(".date-display");
 
-  $prevButton.addEventListener("click", handlePrevButtonClick);
-  $nextButton.addEventListener("click", handleNextButtonClick);
+  $dateDisplay.addEventListener("click", handlePrevOrNextButtonClick);
 };

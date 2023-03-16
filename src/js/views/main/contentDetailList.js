@@ -1,7 +1,7 @@
 import { CATEGORIES } from "../../constants/CATEGORIES.js";
 import { TRANSACTION_TYPE } from "../../constants/TRANSACTION_TYPE.js";
 
-export const getContentDetailListElement = ({ transactionType, price, memo, payment, category }) => {
+export const getContentDetailList = ({ transactionType, price, memo, payment, category }) => {
   return {
     element: {
       tagName: "li",
@@ -39,7 +39,8 @@ export const getContentDetailListElement = ({ transactionType, price, memo, paym
         {
           element: {
             tagName: "div",
-            classList: ["content-detail__price", "expenditure"],
+            classList:
+              transactionType === TRANSACTION_TYPE.EXPENDITURE ? ["content-detail__price", "expenditure"] : ["content-detail__price", "income"],
             children: [
               {
                 element: {

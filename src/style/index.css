@@ -305,7 +305,17 @@ body {
   color: var(--color-primary-alt);
 
   display: flex;
-  gap: 8px;
+}
+
+.content-info__date,
+.content-info__income-text,
+.content-info__expenditure-text,
+.content-info__income {
+  margin-right: 8px;
+}
+
+.content-detail {
+  margin-bottom: 40px;
 }
 
 .content-detail__list {
@@ -345,8 +355,9 @@ body {
   margin-left: 8px;
 }
 
-.content-detail__container > li:last-of-type {
+.content__inner > li:last-of-type {
   border-bottom: 1px solid var(--color-primary-alt);
+  margin-bottom: 33px;
 }
 
 .content-detail__category-container {
@@ -408,7 +419,6 @@ body {
 
 .content-detail__payment {
   min-width: 120px;
-  text-align: center;
   color: var(--color-primary-alt);
 }
 

@@ -1,6 +1,10 @@
 export const createNode = (obj) => {
   const element = document.createElement(obj.element.tagName);
 
+  if (obj.element.id) {
+    element.id = obj.element.id;
+  }
+
   if (obj.element.classList) {
     obj.element.classList.forEach((className) => {
       element.classList.add(className);

@@ -6,18 +6,34 @@ import { WEEKDAY } from "../constants/WEEKDAY.js";
 import { getContentDetailList } from "../views/main/contentDetailList.js";
 import { getContentInfo } from "../views/main/contentInfo.js";
 import { getContentHeader } from "../views/main/contentHeader.js";
+import { SOURCE } from "../constants/SOURCE.js";
 
 export const initMainPage = () => {
-  const transactionObj = getTransactionsByDisplayDate();
+  const transactions = getTransactionLocalStorage();
+
+  if (!transactions) {
+    renderNoSearchImage();
+
+    return;
+  }
+
+  const transactionObj = getTransactionsByDisplayDate(transactions);
 
   renderContentHeader(transactionObj);
   renderContent();
   renderContentList(transactionObj);
 };
 
-const getTransactionsByDisplayDate = () => {
+const renderNoSearchImage = () => {
+  const $mainInner = document.querySelector(".main__inner");
+  const img = document.createElement("img");
+  img.classList.add("main__no-search-image");
+  img.src = SOURCE.NO_SEARCH;
+  $mainInner.appendChild(img);
+};
+
+const getTransactionsByDisplayDate = (transactions) => {
   const transactionObj = {};
-  const transactions = getTransactionLocalStorage();
 
   transactions
     .filter((transaction) => transaction.date.month === displayDateStore.month)

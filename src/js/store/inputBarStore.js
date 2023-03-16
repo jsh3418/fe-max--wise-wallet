@@ -38,7 +38,7 @@ export const inputBarStore = {
     this.memo = memo;
   },
 
-  getMemo(memo) {
+  getMemo() {
     return this.memo;
   },
 

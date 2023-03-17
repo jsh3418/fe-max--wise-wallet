@@ -12,11 +12,10 @@ export const handleDateChange = ({ target }) => {
     return;
   }
 
-  const date = {
-    year: Number(inputDate.slice(0, 4)),
-    month: Number(inputDate.slice(4, 6)),
-    date: Number(inputDate.slice(6, 8)),
-  };
+  const year = Number(inputDate.slice(0, 4));
+  const date = Number(inputDate.slice(6, 8));
+  const month = Number(inputDate.slice(4, 6));
+  const day = new Date(year, month - 1, date).getDay();
 
-  inputBarStore.setDate(date);
+  inputBarStore.setDate({ year, date, month, day });
 };

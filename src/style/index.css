@@ -355,6 +355,8 @@ body {
 
 .content-detail__list:hover .content-detail__delete-button,
 .content-detail__list--selected .content-detail__delete-button {
+  color: var(--color-secondary-red);
+
   display: flex;
   margin-left: 8px;
 }

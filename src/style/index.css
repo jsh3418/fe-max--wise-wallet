@@ -359,7 +359,7 @@ body {
   margin-left: 8px;
 }
 
-.content__inner > li:last-of-type {
+.content-detail__container > li:last-of-type {
   border-bottom: 1px solid var(--color-primary-alt);
   margin-bottom: 33px;
 }

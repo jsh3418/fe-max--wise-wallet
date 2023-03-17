@@ -71,37 +71,54 @@ const renderContentHeader = (transactionObj) => {
 
 const renderContent = () => {
   const $mainInner = document.querySelector(".main__inner");
-  const div = document.createElement("div");
-  div.id = "content";
+  const content = document.createElement("div");
+  content.id = "content";
 
-  $mainInner.appendChild(div);
+  const contentInner = document.createElement("div");
+  contentInner.classList.add("content__inner");
+
+  content.appendChild(contentInner);
+  $mainInner.appendChild(content);
 };
 
 const renderContentList = (transactionObj) => {
-  const $content = document.querySelector("#content");
+  const $content = document.querySelector(".content__inner");
+  const dates = Object.keys(transactionObj);
 
-  Object.keys(transactionObj).forEach((date) => {
-    const month = displayDateStore.month;
-    const day = WEEKDAY[transactionObj[date][0].date.day];
-    const incomeValue = transactionObj[date].reduce(
-      (acc, cur) => (cur.transactionType === TRANSACTION_TYPE.INCOME ? acc + Number(cur.price) : acc),
-      0
-    );
-    const expenditureValue = transactionObj[date].reduce(
-      (acc, cur) => (cur.transactionType === TRANSACTION_TYPE.EXPENDITURE ? acc + Number(cur.price) : acc),
-      0
-    );
+  dates.forEach((date) => {
+    const contentInfo = createContentInfo(transactionObj, date);
+    const contentList = createContentList(transactionObj, date);
 
-    const contentInfo = getContentInfo({ month, date, day, incomeValue, expenditureValue });
-    const contentInfoNode = createNode(contentInfo);
-
-    $content.appendChild(contentInfoNode);
-
-    transactionObj[date].forEach((element) => {
-      const listObj = getContentDetailList(element);
-      const node = createNode(listObj);
-
-      contentInfoNode.appendChild(node);
-    });
+    $content.appendChild(contentInfo);
+    $content.appendChild(contentList);
   });
+};
+
+const createContentInfo = (transactionObj, date) => {
+  const month = displayDateStore.month;
+  const day = WEEKDAY[transactionObj[date][0].date.day];
+  const incomeValue = transactionObj[date].reduce((acc, cur) => (cur.transactionType === TRANSACTION_TYPE.INCOME ? acc + Number(cur.price) : acc), 0);
+  const expenditureValue = transactionObj[date].reduce(
+    (acc, cur) => (cur.transactionType === TRANSACTION_TYPE.EXPENDITURE ? acc + Number(cur.price) : acc),
+    0
+  );
+
+  const contentInfo = getContentInfo({ month, date, day, incomeValue, expenditureValue });
+  const contentInfoNode = createNode(contentInfo);
+
+  return contentInfoNode;
+};
+
+const createContentList = (transactionObj, date) => {
+  const ul = document.createElement("ul");
+  ul.classList.add("content-detail__container");
+
+  transactionObj[date].forEach((element) => {
+    const listObj = getContentDetailList(element);
+    const node = createNode(listObj);
+
+    ul.appendChild(node);
+  });
+
+  return ul;
 };

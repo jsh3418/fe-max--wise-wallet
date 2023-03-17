@@ -1,4 +1,4 @@
-import { initInputBarDate } from "../../init/initInputBarDate.js";
+import { initInputBarDate } from "../../init/initInputBar.js";
 import { inputBarStore } from "../../store/inputBarStore.js";
 
 export const handleDateChange = ({ target }) => {

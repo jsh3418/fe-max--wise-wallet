@@ -11,14 +11,17 @@ export const handlePrevOrNextButtonClick = ({ target }) => {
 
   if (isPrevButtonClick) {
     displayDateStore.moveToPrevMonth();
+    renderDisplayDate();
+    initMainPage();
+
+    return;
   }
 
   if (isNextButtonClick) {
     displayDateStore.moveToNextMonth();
+    renderDisplayDate();
+    initMainPage();
   }
-
-  renderDisplayDate();
-  initMainPage();
 };
 
 const renderDisplayDate = () => {

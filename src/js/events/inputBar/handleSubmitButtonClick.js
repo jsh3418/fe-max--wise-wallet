@@ -1,6 +1,6 @@
 import { inputBarStore } from "../../store/inputBarStore.js";
 import { getTransactionLocalStorage, setTransactionLocalStorage } from "../../utils/transactionLocalStorage.js";
-import { initInputBarDate } from "../../init/initInputBarDate.js";
+import { initInputBar } from "../../init/initInputBar.js";
 
 export const handleSubmitButtonClick = () => {
   appendTransactionLocalStorage();
@@ -9,28 +9,14 @@ export const handleSubmitButtonClick = () => {
 };
 
 const appendTransactionLocalStorage = () => {
-  const localStorageData = JSON.parse(getTransactionLocalStorage());
+  const localStorageData = getTransactionLocalStorage();
+  const data = inputBarStore.getAllProperty();
 
   if (localStorageData == null) {
-    setTransactionLocalStorage(JSON.stringify([inputBarStore.getAllProperty()]));
+    setTransactionLocalStorage([data]);
 
     return;
   }
 
-  const data = JSON.stringify([inputBarStore.getAllProperty(), ...localStorageData]);
-
-  setTransactionLocalStorage(data);
-};
-
-const initInputBar = () => {
-  const $price = document.querySelector("#input-bar__price");
-  const $memo = document.querySelector("#input-bar__memo");
-  const $payment = document.querySelector(".input-bar__payment-text");
-  const $category = document.querySelector(".input-bar__category-text");
-
-  initInputBarDate();
-  $price.value = "";
-  $memo.value = "";
-  $payment.textContent = "선택하세요";
-  $category.textContent = "선택하세요";
+  setTransactionLocalStorage([data, ...localStorageData]);
 };

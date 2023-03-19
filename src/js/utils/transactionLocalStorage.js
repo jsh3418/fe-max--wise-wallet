@@ -1,7 +1,7 @@
 export const setTransactionLocalStorage = (data) => {
-  localStorage.setItem("transaction-items", data);
+  localStorage.setItem("transaction-items", JSON.stringify(data));
 };
 
 export const getTransactionLocalStorage = () => {
-  return localStorage.getItem("transaction-items");
+  return JSON.parse(localStorage.getItem("transaction-items"));
 };

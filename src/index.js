@@ -1,11 +1,13 @@
 import { initDisplayDate } from "./js/init/initDisplayDate.js";
-import { initInputBarDate } from "./js/init/initInputBarDate.js";
 import { initEventHandler } from "./js/init/initEventHandler.js";
+import { initMainPage } from "./js/init/initMainPage.js";
+import { initInputBar } from "./js/init/initInputBar.js";
 
 const init = () => {
   initDisplayDate();
-  initInputBarDate();
+  initInputBar();
   initEventHandler();
+  initMainPage();
 };
 
 document.addEventListener("DOMContentLoaded", init);

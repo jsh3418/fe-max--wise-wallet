@@ -9,4 +9,5 @@ export const SOURCE = {
   RIGHT_ARROW: "/src/assets/right_arrow.svg",
   SUBMIT_BUTTON: "/src/assets/submit-button.svg",
   SUBMIT_BUTTON_ACTIVE: "/src/assets/submit-button-active.svg",
+  NO_SEARCH: "/src/assets/no-search.png",
 };

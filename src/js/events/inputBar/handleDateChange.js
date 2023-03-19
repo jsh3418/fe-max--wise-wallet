@@ -1,4 +1,4 @@
-import { initInputBarDate } from "../../init/initInputBarDate.js";
+import { initInputBarDate } from "../../init/initInputBar.js";
 import { inputBarStore } from "../../store/inputBarStore.js";
 
 export const handleDateChange = ({ target }) => {
@@ -12,11 +12,10 @@ export const handleDateChange = ({ target }) => {
     return;
   }
 
-  const date = {
-    year: inputDate.slice(0, 4),
-    month: inputDate.slice(4, 6),
-    date: inputDate.slice(6, 8),
-  };
+  const year = Number(inputDate.slice(0, 4));
+  const date = Number(inputDate.slice(6, 8));
+  const month = Number(inputDate.slice(4, 6));
+  const day = new Date(year, month - 1, date).getDay();
 
-  inputBarStore.setDate(date);
+  inputBarStore.setDate({ year, date, month, day });
 };

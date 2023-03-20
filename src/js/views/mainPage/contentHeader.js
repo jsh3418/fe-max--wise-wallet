@@ -21,6 +21,7 @@ export const getContentHeader = ({ count, incomeValue, expenditureValue }) => {
               {
                 element: {
                   tagName: "img",
+                  classList: ["content-header__income-filter-checkbox"],
                   src: SOURCE.CHECK_BOX_DEFAULT,
                 },
               },
@@ -34,6 +35,7 @@ export const getContentHeader = ({ count, incomeValue, expenditureValue }) => {
               {
                 element: {
                   tagName: "img",
+                  classList: ["content-header__expenditure-filter-checkbox"],
                   src: SOURCE.CHECK_BOX_DEFAULT,
                 },
               },

@@ -3,9 +3,9 @@ import { displayDateStore } from "../store/displayDateStore.js";
 import { createNode } from "../utils/createElement.js";
 import { getTransactionLocalStorage } from "../utils/transactionLocalStorage.js";
 import { WEEKDAY } from "../constants/WEEKDAY.js";
-import { getContentDetailList } from "../views/main/contentDetailList.js";
-import { getContentInfo } from "../views/main/contentInfo.js";
-import { getContentHeader } from "../views/main/contentHeader.js";
+import { getContentDetailList } from "../views/mainPage/contentDetailList.js";
+import { getContentInfo } from "../views/mainPage/contentInfo.js";
+import { getContentHeader } from "../views/mainPage/contentHeader.js";
 import { SOURCE } from "../constants/SOURCE.js";
 
 export const initMainPage = () => {

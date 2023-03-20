@@ -11,6 +11,9 @@ import { SOURCE } from "../constants/SOURCE.js";
 export const initMainPage = () => {
   const transactions = getTransactionLocalStorage();
   const transactionObj = getTransactionsByDisplayDate(transactions);
+  const $mainInner = document.querySelector(".main__inner");
+
+  clearElement($mainInner);
 
   if (Object.keys(transactionObj).length === 0) {
     renderNoSearchImage();
@@ -18,9 +21,6 @@ export const initMainPage = () => {
     return;
   }
 
-  const $mainInner = document.querySelector(".main__inner");
-
-  clearElement($mainInner);
   renderContentHeader(transactionObj, $mainInner);
   renderContent();
   renderContentList(transactionObj);

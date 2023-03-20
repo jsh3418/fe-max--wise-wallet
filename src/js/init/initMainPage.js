@@ -28,12 +28,27 @@ export const initMainPage = () => {
   initMainPageEventHandler();
 };
 
+export const renderFilteredContentList = () => {
+  const transactions = getTransactionLocalStorage();
+  const filterTransactions = filterTransactionsByCheckbox(transactions);
+  const transactionObj = getTransactionsByDisplayDate(filterTransactions);
+  const $content = document.querySelector("#content");
+
+  removeElement($content);
+  renderContent();
+  renderContentList(transactionObj);
+};
+
 const renderNoSearchImage = () => {
   const $mainInner = document.querySelector(".main__inner");
   const img = document.createElement("img");
   img.classList.add("main__no-search-image");
   img.src = SOURCE.NO_SEARCH;
   $mainInner.appendChild(img);
+};
+
+const removeElement = (element) => {
+  element.remove();
 };
 
 const clearElement = (element) => {
@@ -62,6 +77,23 @@ const getTransactionsByDisplayDate = (transactions) => {
     });
 
   return transactionObj;
+};
+
+const filterTransactionsByCheckbox = (transactions) => {
+  const isIncomeCheck = document.querySelector(".content-header__income-filter-checkbox").classList.contains("checked");
+  const isExpenditureCheck = document.querySelector(".content-header__expenditure-filter-checkbox").classList.contains("checked");
+
+  if (isIncomeCheck && isExpenditureCheck) return transactions;
+
+  if (isIncomeCheck) {
+    return transactions.filter((transaction) => transaction.transactionType === TRANSACTION_TYPE.INCOME);
+  }
+
+  if (isExpenditureCheck) {
+    return transactions.filter((transaction) => transaction.transactionType === TRANSACTION_TYPE.EXPENDITURE);
+  }
+
+  return [];
 };
 
 const renderContentHeader = (transactionObj, $mainInner) => {

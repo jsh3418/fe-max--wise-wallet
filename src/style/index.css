@@ -314,7 +314,8 @@ body {
 .content-info__date,
 .content-info__income-text,
 .content-info__expenditure-text,
-.content-info__income {
+.content-info__income,
+.content-info__expenditure {
   margin-right: 8px;
 }
 

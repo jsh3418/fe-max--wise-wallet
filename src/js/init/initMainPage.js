@@ -7,6 +7,7 @@ import { getContentDetailList } from "../views/mainPage/contentDetailList.js";
 import { getContentInfo } from "../views/mainPage/contentInfo.js";
 import { getContentHeader } from "../views/mainPage/contentHeader.js";
 import { SOURCE } from "../constants/SOURCE.js";
+import { initMainPageEventHandler } from "../events/mainPage/index.js";
 
 export const initMainPage = () => {
   const transactions = getTransactionLocalStorage();
@@ -24,6 +25,7 @@ export const initMainPage = () => {
   renderContentHeader(transactionObj, $mainInner);
   renderContent();
   renderContentList(transactionObj);
+  initMainPageEventHandler();
 };
 
 const renderNoSearchImage = () => {

@@ -95,8 +95,8 @@ const renderContentList = (transactionObj) => {
     const contentInfo = createContentInfo(transactionObj, date);
     const contentList = createContentList(transactionObj, date);
 
-    $content.appendChild(contentInfo);
-    $content.appendChild(contentList);
+    $content.insertAdjacentElement("afterbegin", contentList);
+    $content.insertAdjacentElement("afterbegin", contentInfo);
   });
 };
 

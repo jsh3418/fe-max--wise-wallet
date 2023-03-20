@@ -1,5 +1,11 @@
 import { inputBarStore } from "../../store/inputBarStore.js";
 
 export const handlePriceInputFocus = ({ currentTarget }) => {
-  currentTarget.value = inputBarStore.getPrice();
+  const price = inputBarStore.getPrice();
+
+  setPriceInput(currentTarget, price);
+};
+
+const setPriceInput = (currentTarget, price) => {
+  currentTarget.value = price;
 };

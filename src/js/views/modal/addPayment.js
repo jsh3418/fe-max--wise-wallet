@@ -10,7 +10,7 @@ export const getAddPaymentModalTemplate = () => `
 </div>
 `;
 
-export const getPaymentListChildrenTemplate = (value) => `
+export const getPaymentListTemplate = (value) => `
 <span>${value}</span>
 <img class="payment-dropdown__list-delete" src="/src/assets/delete-icon.svg" />
 `;

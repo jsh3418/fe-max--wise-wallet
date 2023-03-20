@@ -5,12 +5,12 @@ import { initInputBar } from "../../init/initInputBar.js";
 export const handleSubmitButtonClick = () => {
   if (!inputBarStore.isAllFill()) return;
 
-  appendTransactionLocalStorage();
+  appendDataToLocalStorage();
   inputBarStore.initStore();
   initInputBar();
 };
 
-const appendTransactionLocalStorage = () => {
+const appendDataToLocalStorage = () => {
   const localStorageData = getTransactionLocalStorage();
   const data = inputBarStore.getAllProperty();
 

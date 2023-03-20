@@ -1,4 +1,5 @@
 import { SOURCE } from "../../constants/SOURCE.js";
+import { renderFilteredContentList } from "../../init/initMainPage.js";
 
 export const handleFilterCheckBoxClick = ({ target }) => {
   const isIncomeFilterCheckboxClick = target.classList.contains("content-header__income-filter-checkbox");
@@ -6,15 +7,10 @@ export const handleFilterCheckBoxClick = ({ target }) => {
 
   if (!isIncomeFilterCheckboxClick && !isExpenditureFilterCheckboxClick) return;
 
-  if (isIncomeFilterCheckboxClick) {
-    toggleClassList(target);
-    toggleCheckBoxImg(target);
-  }
+  toggleClassList(target);
+  toggleCheckBoxImg(target);
 
-  if (isExpenditureFilterCheckboxClick) {
-    toggleClassList(target);
-    toggleCheckBoxImg(target);
-  }
+  renderFilteredContentList();
 };
 
 const toggleClassList = (target) => {

@@ -6,11 +6,11 @@ export const displayDateStore = {
   monthName: null,
 
   initStore() {
-    const { year, month } = getCurrentDate();
+    const { year, month, monthName } = getCurrentDate();
 
     this.year = year;
     this.month = month;
-    this.monthName = this.getMonthName();
+    this.monthName = monthName;
   },
 
   getMonthName() {

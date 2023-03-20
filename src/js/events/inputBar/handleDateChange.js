@@ -19,10 +19,9 @@ const parseDate = (inputDate) => {
   const year = Number(inputDate.slice(0, 4));
   const month = Number(inputDate.slice(4, 6));
   const date = Number(inputDate.slice(6, 8));
-  const day = new Date(year, month - 1, date).getDay();
 
   if (1 > month || month > 12) throw new Error("1월부터 12월까지만 입력해주세요.");
   if (1 > date || date > 31) throw new Error("1일부터 31일까지만 입력해주세요.");
 
-  return { year, month, date, day };
+  return new Date(year, month - 1, date);
 };

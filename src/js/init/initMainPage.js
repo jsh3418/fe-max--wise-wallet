@@ -36,13 +36,17 @@ const getTransactionsByDisplayDate = (transactions) => {
   const transactionObj = {};
 
   transactions
-    .filter((transaction) => transaction.date.month === displayDateStore.month)
+    .filter((transaction) => new Date(transaction.date).getMonth() + 1 === displayDateStore.month)
     .forEach((transaction) => {
-      if (!transactionObj[transaction.date.date]) {
-        transactionObj[transaction.date.date] = [transaction];
-      } else {
-        transactionObj[transaction.date.date] = [...transactionObj[transaction.date.date], transaction];
+      const month = new Date(transaction.date).getDate();
+
+      if (!transactionObj[month]) {
+        transactionObj[month] = [transaction];
+
+        return;
       }
+
+      transactionObj[month] = [...transactionObj[month], transaction];
     });
 
   return transactionObj;
@@ -96,7 +100,7 @@ const renderContentList = (transactionObj) => {
 
 const createContentInfo = (transactionObj, date) => {
   const month = displayDateStore.month;
-  const day = WEEKDAY[transactionObj[date][0].date.day];
+  const day = WEEKDAY[new Date(transactionObj[date][0].date).getDay()];
   const incomeValue = transactionObj[date].reduce((acc, cur) => (cur.transactionType === TRANSACTION_TYPE.INCOME ? acc + Number(cur.price) : acc), 0);
   const expenditureValue = transactionObj[date].reduce(
     (acc, cur) => (cur.transactionType === TRANSACTION_TYPE.EXPENDITURE ? acc + Number(cur.price) : acc),

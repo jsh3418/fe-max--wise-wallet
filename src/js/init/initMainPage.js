@@ -18,7 +18,10 @@ export const initMainPage = () => {
     return;
   }
 
-  renderContentHeader(transactionObj);
+  const $mainInner = document.querySelector(".main__inner");
+
+  clearElement($mainInner);
+  renderContentHeader(transactionObj, $mainInner);
   renderContent();
   renderContentList(transactionObj);
 };
@@ -29,6 +32,10 @@ const renderNoSearchImage = () => {
   img.classList.add("main__no-search-image");
   img.src = SOURCE.NO_SEARCH;
   $mainInner.appendChild(img);
+};
+
+const clearElement = (element) => {
+  element.innerHTML = "";
 };
 
 const getTransactionsByDisplayDate = (transactions) => {
@@ -55,8 +62,7 @@ const getTransactionsByDisplayDate = (transactions) => {
   return transactionObj;
 };
 
-const renderContentHeader = (transactionObj) => {
-  const $mainInner = document.querySelector(".main__inner");
+const renderContentHeader = (transactionObj, $mainInner) => {
   const transactions = Object.values(transactionObj);
 
   const totalCount = transactions.reduce((acc, cur) => acc + cur.length, 0);

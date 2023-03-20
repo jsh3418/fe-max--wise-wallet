@@ -10,14 +10,13 @@ import { SOURCE } from "../constants/SOURCE.js";
 
 export const initMainPage = () => {
   const transactions = getTransactionLocalStorage();
+  const transactionObj = getTransactionsByDisplayDate(transactions);
 
-  if (!transactions) {
+  if (Object.keys(transactionObj).length === 0) {
     renderNoSearchImage();
 
     return;
   }
-
-  const transactionObj = getTransactionsByDisplayDate(transactions);
 
   renderContentHeader(transactionObj);
   renderContent();
@@ -36,7 +35,11 @@ const getTransactionsByDisplayDate = (transactions) => {
   const transactionObj = {};
 
   transactions
-    .filter((transaction) => new Date(transaction.date).getMonth() + 1 === displayDateStore.month)
+    ?.filter((transaction) => {
+      const transactionDate = new Date(transaction.date);
+
+      return transactionDate.getMonth() + 1 === displayDateStore.month && transactionDate.getFullYear() === displayDateStore.year;
+    })
     .forEach((transaction) => {
       const month = new Date(transaction.date).getDate();
 
@@ -54,7 +57,6 @@ const getTransactionsByDisplayDate = (transactions) => {
 
 const renderContentHeader = (transactionObj) => {
   const $mainInner = document.querySelector(".main__inner");
-
   const transactions = Object.values(transactionObj);
 
   const totalCount = transactions.reduce((acc, cur) => acc + cur.length, 0);

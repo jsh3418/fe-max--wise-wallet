@@ -293,6 +293,11 @@ body {
   width: 20px;
 }
 
+.content-header__total-filter-inner {
+  display: flex;
+  gap: 4px;
+}
+
 .content-info {
   font-size: var(--font-size-bold-medium);
   margin-bottom: 20px;

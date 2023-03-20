@@ -3,6 +3,8 @@ import { getTransactionLocalStorage, setTransactionLocalStorage } from "../../ut
 import { initInputBar } from "../../init/initInputBar.js";
 
 export const handleSubmitButtonClick = () => {
+  if (!inputBarStore.isAllFill()) return;
+
   appendTransactionLocalStorage();
   inputBarStore.initStore();
   initInputBar();

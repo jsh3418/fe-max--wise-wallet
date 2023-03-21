@@ -2,11 +2,12 @@ import { CATEGORIES } from "../../constants/CATEGORIES.js";
 import { SOURCE } from "../../constants/SOURCE.js";
 import { TRANSACTION_TYPE } from "../../constants/TRANSACTION_TYPE.js";
 
-export const getContentDetailList = ({ transactionType, price, memo, payment, category }) => {
+export const getContentDetailList = ({ transactionType, price, memo, payment, category, id }) => {
   return {
     element: {
       tagName: "li",
       classList: ["content-detail__list"],
+      dataset: { id },
       children: [
         {
           element: {

@@ -1,6 +1,6 @@
 import { TRANSACTION_TYPE } from "../constants/TRANSACTION_TYPE.js";
 import { displayDateStore } from "../store/displayDateStore.js";
-import { createNode } from "../utils/createElement.js";
+import { createElement } from "../utils/createElement.js";
 import { getTransactionLocalStorage } from "../utils/transactionLocalStorage.js";
 import { WEEKDAY } from "../constants/WEEKDAY.js";
 import { getContentDetailList } from "../views/mainPage/contentDetailList.js";
@@ -38,6 +38,7 @@ export const renderFilteredContentList = () => {
   renderContent();
   renderContentList(transactionObj);
   renderContentHeaderListCount(transactionObj);
+  initMainPageEventHandler();
 };
 
 const renderNoSearchImage = () => {
@@ -111,7 +112,7 @@ const renderContentHeader = (transactionObj, $mainInner) => {
   );
 
   const headerObj = getContentHeader({ count: totalCount, incomeValue, expenditureValue });
-  const node = createNode(headerObj);
+  const node = createElement(headerObj);
 
   $mainInner.appendChild(node);
 };
@@ -151,7 +152,7 @@ const createContentInfo = (transactionObj, date) => {
   );
 
   const contentInfo = getContentInfo({ month, date, day, incomeValue, expenditureValue });
-  const contentInfoNode = createNode(contentInfo);
+  const contentInfoNode = createElement(contentInfo);
 
   return contentInfoNode;
 };
@@ -162,7 +163,7 @@ const createContentList = (transactionObj, date) => {
 
   transactionObj[date].forEach((element) => {
     const listObj = getContentDetailList(element);
-    const node = createNode(listObj);
+    const node = createElement(listObj);
 
     ul.appendChild(node);
   });

@@ -532,6 +532,17 @@ input[type="number"]::-webkit-inner-spin-button {
   margin-bottom: 24px;
 }
 
+.modal-content-delete-text {
+  width: 320px;
+  height: 96px;
+  margin-bottom: 32px;
+  font-family: var(--font-family-bold);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-bold-medium);
+  line-height: var(--line-height-bold-medium);
+  color: var(--color-primary);
+}
+
 .modal-button-container {
   display: flex;
   justify-content: space-between;

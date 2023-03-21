@@ -289,13 +289,13 @@ body {
   gap: 8px;
 }
 
-.content-header__total-filter > img {
-  width: 20px;
-}
-
 .content-header__total-filter-inner {
   display: flex;
   gap: 4px;
+}
+
+.content-header__total-filter-inner > img {
+  cursor: pointer;
 }
 
 .content-info {

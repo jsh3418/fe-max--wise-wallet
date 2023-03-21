@@ -37,9 +37,7 @@ export const renderFilteredContentList = () => {
   removeElement($content);
   renderContent();
   renderContentList(transactionObj);
-
-  Object.values(transactionObj).reduce();
-  document.querySelector(".content-header__list-count").textContent = `전체 내역 ${Object.values(transactionObj).length}건`;
+  renderContentHeaderListCount(transactionObj);
 };
 
 const renderNoSearchImage = () => {
@@ -170,4 +168,11 @@ const createContentList = (transactionObj, date) => {
   });
 
   return ul;
+};
+
+const renderContentHeaderListCount = (transactionObj) => {
+  const $listCount = document.querySelector(".content-header__list-count");
+  const transactionCount = Object.values(transactionObj).reduce((acc, cur) => acc + cur.length, 0);
+
+  $listCount.textContent = `전체 내역 ${transactionCount}건`;
 };

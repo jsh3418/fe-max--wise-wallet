@@ -1,4 +1,5 @@
 import { CATEGORIES } from "../../constants/CATEGORIES.js";
+import { SOURCE } from "../../constants/SOURCE.js";
 import { TRANSACTION_TYPE } from "../../constants/TRANSACTION_TYPE.js";
 
 export const getContentDetailList = ({ transactionType, price, memo, payment, category }) => {
@@ -57,7 +58,7 @@ export const getContentDetailList = ({ transactionType, price, memo, payment, ca
                     {
                       element: {
                         tagName: "img",
-                        src: "/src/assets/delete-icon.svg",
+                        src: SOURCE.DELETE_ICON,
                       },
                     },
                     {

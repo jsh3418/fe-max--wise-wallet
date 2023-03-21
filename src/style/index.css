@@ -1,4 +1,4 @@
-@import "reset.css";
+@import "./reset.css";
 @import "./theme.css";
 
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");

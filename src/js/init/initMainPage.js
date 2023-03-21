@@ -37,6 +37,9 @@ export const renderFilteredContentList = () => {
   removeElement($content);
   renderContent();
   renderContentList(transactionObj);
+
+  Object.values(transactionObj).reduce();
+  document.querySelector(".content-header__list-count").textContent = `전체 내역 ${Object.values(transactionObj).length}건`;
 };
 
 const renderNoSearchImage = () => {

@@ -1,3 +1,5 @@
+import { SOURCE } from "../../constants/SOURCE.js";
+
 export const getAddPaymentModalTemplate = () => `
 <div class="modal-overlay"></div>
 <div class="modal-content">
@@ -12,5 +14,5 @@ export const getAddPaymentModalTemplate = () => `
 
 export const getPaymentListTemplate = (value) => `
 <span>${value}</span>
-<img class="payment-dropdown__list-delete" src="/src/assets/delete-icon.svg" />
+<img class="payment-dropdown__list-delete" src=${SOURCE.DELETE_ICON} />
 `;

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/src/style/index.css" />
+    <link rel="stylesheet" href="./src/style/index.css" />
     <title>khundi의 가계부</title>
   </head>
   <body>
@@ -15,7 +15,7 @@
         </div>
         <div class="date-display">
           <div class="date-display__prev-button">
-            <img src="/src/assets/left_arrow.svg" />
+            <img src="./src/assets/left_arrow.svg" />
           </div>
           <div class="date-display__month-year">
             <div class="date-display__year">1995</div>
@@ -23,7 +23,7 @@
             <div class="date-display__month-name">january</div>
           </div>
           <div class="date-display__next-button">
-            <img src="/src/assets/right_arrow.svg" />
+            <img src="./src/assets/right_arrow.svg" />
           </div>
         </div>
         <nav>
@@ -78,7 +78,7 @@
         <div class="input-bar__price">
           <label for="price">금액</label>
           <div class="input-bar__price-input">
-            <img class="input-bar__transaction-type" src="/src/assets/minus-icon.svg" />
+            <img class="input-bar__transaction-type" src="./src/assets/minus-icon.svg" />
             <input type="text" id="input-bar__price" placeholder="0" />
             <span>원</span>
           </div>
@@ -91,17 +91,17 @@
           <label for="input-bar__payment">결제수단</label>
           <div id="input-bar__payment">
             <span class="input-bar__payment-text">선택하세요</span>
-            <img src="/src/assets/dropdown-icon.svg" />
+            <img src="./src/assets/dropdown-icon.svg" />
           </div>
           <div class="payment-dropdown display-none">
             <ul class="payment-dropdown__ul">
               <li class="payment-dropdown__list" data-value="현금">
                 <span>현금</span>
-                <img class="payment-dropdown__list-delete" src="/src/assets/delete-icon.svg" />
+                <img class="payment-dropdown__list-delete" src="./src/assets/delete-icon.svg" />
               </li>
               <li class="payment-dropdown__list" data-value="신용카드">
                 <span>신용카드</span>
-                <img class="payment-dropdown__list-delete" src="/src/assets/delete-icon.svg" />
+                <img class="payment-dropdown__list-delete" src="./src/assets/delete-icon.svg" />
               </li>
               <li class="payment-dropdown__add-button">추가하기</li>
             </ul>
@@ -111,7 +111,7 @@
           <label for="input-bar__category">분류</label>
           <div id="input-bar__category">
             <span class="input-bar__category-text">선택하세요</span>
-            <img src="/src/assets/dropdown-icon.svg" />
+            <img src="./src/assets/dropdown-icon.svg" />
           </div>
           <div class="category-dropdown display-none">
             <ul class="category-dropdown__ul">
@@ -125,7 +125,7 @@
             </ul>
           </div>
         </div>
-        <img class="input-bar__submit-button" src="/src/assets/submit-button.svg" />
+        <img class="input-bar__submit-button" src="./src/assets/submit-button.svg" />
       </form>
     </section>
 
@@ -135,6 +135,6 @@
 
     <div class="modal display-none"></div>
 
-    <script type="module" src="/src/index.js"></script>
+    <script type="module" src="./src/index.js"></script>
   </body>
 </html>

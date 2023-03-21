@@ -1,4 +1,4 @@
-import { renderFilteredContentList } from "../../init/initMainPage.js";
+import { initMainPage } from "../../init/initMainPage.js";
 import { hideElement } from "../../utils/hideElement.js";
 import { showElement } from "../../utils/showElement.js";
 import { getTransactionLocalStorage, setTransactionLocalStorage } from "../../utils/transactionLocalStorage.js";
@@ -48,6 +48,6 @@ const handleTransactionDelete = (target, targetId) => {
   const filteredTransactions = transactions.filter((transaction) => transaction.id !== targetId);
 
   setTransactionLocalStorage(filteredTransactions);
-  renderFilteredContentList();
+  initMainPage();
   hideElement(target.closest(".modal"));
 };

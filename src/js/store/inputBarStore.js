@@ -1,10 +1,9 @@
 import { TRANSACTION_TYPE } from "../constants/TRANSACTION_TYPE.js";
-import { getCurrentDate } from "../utils/getCurrentDate.js";
 import { getUUID } from "../utils/getUUID.js";
 
 export const inputBarStore = {
   id: getUUID(),
-  date: getCurrentDate(),
+  date: new Date(),
   createdAt: null,
   transactionType: TRANSACTION_TYPE.EXPENDITURE,
   price: "",
@@ -14,7 +13,7 @@ export const inputBarStore = {
 
   initStore() {
     this.id = getUUID();
-    this.date = getCurrentDate();
+    this.date = new Date();
     this.createdAt = null;
     this.transactionType = TRANSACTION_TYPE.EXPENDITURE;
     this.price = "";

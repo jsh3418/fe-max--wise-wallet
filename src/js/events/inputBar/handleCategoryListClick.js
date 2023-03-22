@@ -4,9 +4,13 @@ import { hideElement } from "../../utils/hideElement.js";
 export const handleCategoryListClick = ({ target, currentTarget }) => {
   if (target.tagName === "UL") return;
 
-  const $categoryText = document.querySelector(".input-bar__category-text");
-
-  $categoryText.textContent = target.textContent;
+  renderCategoryText(target.textContent);
   inputBarStore.setCategory(target.dataset.category);
   hideElement(currentTarget);
+};
+
+const renderCategoryText = (text) => {
+  const $categoryText = document.querySelector(".input-bar__category-text");
+
+  $categoryText.textContent = text;
 };

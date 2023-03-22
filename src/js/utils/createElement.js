@@ -1,4 +1,4 @@
-export const createNode = (obj) => {
+export const createElement = (obj) => {
   const element = document.createElement(obj.element.tagName);
 
   if (obj.element.id) {
@@ -19,9 +19,15 @@ export const createNode = (obj) => {
     element.src = obj.element.src;
   }
 
+  if (obj.element.dataset) {
+    Object.entries(obj.element.dataset).forEach(([dataset, value]) => {
+      element.dataset[dataset] = value;
+    });
+  }
+
   if (obj.element.children) {
     obj.element.children.forEach((child) => {
-      const childElement = createNode(child);
+      const childElement = createElement(child);
 
       element.appendChild(childElement);
     });

@@ -5,14 +5,20 @@ export const handleFormChangeAndClick = () => {
   const $submitButton = document.querySelector(".input-bar__submit-button");
 
   if (inputBarStore.isAllFill()) {
-    $submitButton.src = SOURCE.SUBMIT_BUTTON_ACTIVE;
-    $submitButton.classList.add("active");
+    activateSubmitButton($submitButton);
 
     return;
   }
 
-  if (!$submitButton.classList.contains("active")) return;
+  deactivateSubmitButton($submitButton);
+};
 
-  $submitButton.src = SOURCE.SUBMIT_BUTTON;
-  $submitButton.classList.remove("active");
+const activateSubmitButton = (button) => {
+  button.src = SOURCE.SUBMIT_BUTTON_ACTIVE;
+  button.classList.add("active");
+};
+
+const deactivateSubmitButton = (button) => {
+  button.src = SOURCE.SUBMIT_BUTTON;
+  button.classList.remove("active");
 };

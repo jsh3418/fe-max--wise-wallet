@@ -16,10 +16,6 @@ body {
   color: var(--color-primary-alt);
 }
 
-.display-none {
-  display: none !important;
-}
-
 .header {
   width: 100%;
   height: 194px;
@@ -565,4 +561,8 @@ input[type="number"]::-webkit-inner-spin-button {
 
 .modal-add-confirm-button {
   color: var(--color-secondary-yellow);
+}
+
+.display-none {
+  display: none;
 }

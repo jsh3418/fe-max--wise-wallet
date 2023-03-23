@@ -4,7 +4,9 @@ import { getAddPaymentModalTemplate, getPaymentListTemplate } from "../../views/
 import { inputBarStore } from "../../store/inputBarStore.js";
 
 export const handlePaymentListClick = ({ target }) => {
-  if (isInvalidClick(target)) return;
+  if (isInvalidClick(target)) {
+    return;
+  }
 
   if (isAddButtonClick(target)) {
     const $modal = document.querySelector(".modal");

@@ -5,7 +5,9 @@ export const handleFilterCheckBoxClick = ({ target }) => {
   const isIncomeFilterCheckboxClick = target.classList.contains("content-header__income-filter-checkbox");
   const isExpenditureFilterCheckboxClick = target.classList.contains("content-header__expenditure-filter-checkbox");
 
-  if (!isIncomeFilterCheckboxClick && !isExpenditureFilterCheckboxClick) return;
+  if (!isIncomeFilterCheckboxClick && !isExpenditureFilterCheckboxClick) {
+    return;
+  }
 
   toggleClassList(target);
   toggleCheckBoxImg(target);

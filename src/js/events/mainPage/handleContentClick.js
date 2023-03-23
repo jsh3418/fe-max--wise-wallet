@@ -8,7 +8,7 @@ export const handleContentClick = ({ target }) => {
   if (isDeleteButtonClick(target)) {
     const $modal = document.querySelector(".modal");
     const targetId = target.closest("li").dataset.id;
-    const targetData = findTargetDataByTransactionLocalStorage(targetId);
+    const targetData = findTargetData(targetId);
 
     setModalTemplate($modal, targetData);
     setModalButtonEvent($modal, targetId);
@@ -20,7 +20,7 @@ const isDeleteButtonClick = (target) => {
   return target.closest(".content-detail__delete-button");
 };
 
-const findTargetDataByTransactionLocalStorage = (targetId) => {
+const findTargetData = (targetId) => {
   const transactions = getTransactionLocalStorage();
 
   return transactions.find((transaction) => transaction.id === targetId);

@@ -22,6 +22,14 @@ export const inputBarStore = {
     this.category = null;
   },
 
+  setId(id) {
+    this.id = id;
+  },
+
+  getId() {
+    return this.id;
+  },
+
   setDate(date) {
     this.date = date;
   },

@@ -24,5 +24,5 @@ const appendDataToLocalStorage = () => {
     return;
   }
 
-  setTransactionLocalStorage([data, ...localStorageData]);
+  setTransactionLocalStorage([data, ...localStorageData.filter(({ id }) => id !== inputBarStore.getId())]);
 };

@@ -335,6 +335,7 @@ body {
   display: flex;
   align-items: center;
   gap: 16px;
+  cursor: pointer;
 }
 
 .content-detail__list--selected {
@@ -349,6 +350,7 @@ body {
   display: flex;
   align-items: center;
   gap: 16px;
+  cursor: pointer;
 }
 
 .content-detail__list:hover {

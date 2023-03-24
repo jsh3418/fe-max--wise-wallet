@@ -26,10 +26,9 @@ export const handleContentClick = ({ target }) => {
   if (!contentLi) {
     return;
   }
-  // 클릭했을 때 해당 li의 클래스를 content-detail__list--selected로 수정한다.
+
   contentLi.classList = "content-detail__list--selected";
 
-  // 외부를 클릭했을 때 클래스가 되돌아간다.
   const handleContentLiOutsideClick = ({ target }) => {
     if (target.closest(".content-detail__list--selected") === contentLi) {
       return;
@@ -41,7 +40,6 @@ export const handleContentClick = ({ target }) => {
 
   document.addEventListener("click", handleContentLiOutsideClick);
 
-  // inputBarStore에 target data id를 찾아 데이터를 저장한다.
   const { id, date, transactionType, price, memo, payment, category } = findTargetData(contentLi.dataset.id);
 
   if ((transactionType === TRANSACTION_TYPE.EXPENDITURE) !== inputBarStore.isTransactionExpenditure()) {
@@ -55,7 +53,6 @@ export const handleContentClick = ({ target }) => {
   inputBarStore.setPayment(payment);
   inputBarStore.setCategory(category);
 
-  // inputBarStore에 데이터로 inputBar 영역에 value로 넣는다.
   const dateInput = document.querySelector("#input-bar__date");
   const priceInput = document.querySelector("#input-bar__price");
   const memoInput = document.querySelector("#input-bar__memo");

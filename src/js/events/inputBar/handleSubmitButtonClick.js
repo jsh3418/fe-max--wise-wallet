@@ -4,7 +4,9 @@ import { initInputBar } from "../../init/initInputBar.js";
 import { initMainPage } from "../../init/initMainPage.js";
 
 export const handleSubmitButtonClick = () => {
-  if (!inputBarStore.isAllFill()) return;
+  if (!inputBarStore.isAllFill()) {
+    return;
+  }
 
   appendDataToLocalStorage();
   inputBarStore.initStore();
@@ -22,5 +24,5 @@ const appendDataToLocalStorage = () => {
     return;
   }
 
-  setTransactionLocalStorage([data, ...localStorageData]);
+  setTransactionLocalStorage([data, ...localStorageData.filter(({ id }) => id !== inputBarStore.getId())]);
 };

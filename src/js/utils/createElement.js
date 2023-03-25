@@ -1,32 +1,32 @@
 export const createElement = (obj) => {
-  const element = document.createElement(obj.element.tagName);
+  const element = document.createElement(obj.tagName);
 
-  if (obj.element.id) {
-    element.id = obj.element.id;
+  if (obj.id) {
+    element.id = obj.id;
   }
 
-  if (obj.element.classList) {
-    obj.element.classList.forEach((className) => {
+  if (obj.classList) {
+    obj.classList.forEach((className) => {
       element.classList.add(className);
     });
   }
 
-  if (obj.element.text) {
-    element.textContent = obj.element.text;
+  if (obj.text) {
+    element.textContent = obj.text;
   }
 
-  if (obj.element.src) {
-    element.src = obj.element.src;
+  if (obj.src) {
+    element.src = obj.src;
   }
 
-  if (obj.element.dataset) {
-    Object.entries(obj.element.dataset).forEach(([dataset, value]) => {
+  if (obj.dataset) {
+    Object.entries(obj.dataset).forEach(([dataset, value]) => {
       element.dataset[dataset] = value;
     });
   }
 
-  if (obj.element.children) {
-    obj.element.children.forEach((child) => {
+  if (obj.children) {
+    obj.children.forEach((child) => {
       const childElement = createElement(child);
 
       element.appendChild(childElement);

@@ -85,7 +85,9 @@ const filterTransactionsByCheckbox = (transactions) => {
   const isIncomeCheck = document.querySelector(".content-header__income-filter-checkbox").classList.contains("checked");
   const isExpenditureCheck = document.querySelector(".content-header__expenditure-filter-checkbox").classList.contains("checked");
 
-  if (isIncomeCheck && isExpenditureCheck) return transactions;
+  if (isIncomeCheck && isExpenditureCheck) {
+    return transactions;
+  }
 
   if (isIncomeCheck) {
     return transactions.filter((transaction) => transaction.transactionType === TRANSACTION_TYPE.INCOME);

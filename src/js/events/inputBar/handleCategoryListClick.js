@@ -2,7 +2,9 @@ import { inputBarStore } from "../../store/inputBarStore.js";
 import { hideElement } from "../../utils/hideElement.js";
 
 export const handleCategoryListClick = ({ target, currentTarget }) => {
-  if (target.tagName === "UL") return;
+  if (target.tagName === "UL") {
+    return;
+  }
 
   renderCategoryText(target.textContent);
   inputBarStore.setCategory(target.dataset.category);
